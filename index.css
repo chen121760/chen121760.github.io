@@ -16,6 +16,17 @@
     src: url('./fonts/Jost-Regular.ttf') format('woff');
 }
 
+@font-face {
+    font-family: 'Source Han Serif CN';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/SourceHanSerifCN-Regular.otf') format('opentype');
+}
+
+html[lang="zh"] body {
+    font-family: 'Source Han Serif CN', 'SimSun', serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -52,6 +63,26 @@
     --gutter-small: 2rem;
 
     --border-light: 1px solid rgb(36, 35, 35);
+}
+
+/* Language Toggle */
+.lang-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--pink);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    color: var(--white);
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.lang-toggle:hover {
+    background: var(--pink);
 }
 
 html {
