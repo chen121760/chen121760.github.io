@@ -7,7 +7,7 @@ My personal academic portfolio website.
 ## Projects
 
 - [Hydride Tc Predictor](https://chen121760.github.io/web-of-Hydride-Tc-Predictor/) - Interpretable prediction of hydrogen-based superconductors
-- [USPEX Analyzer](https://chen121760.github.io/USPEX-Analyzer/) - Browser-based post-processing platform for USPEX
+- [USPEX Analyzer](https://chen121760.github.io/USPEX-Analyzer/) - Browser-based post-processing platform for USPEX 10.5
 
 ## License
 
