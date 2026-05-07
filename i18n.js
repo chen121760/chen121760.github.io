@@ -4,7 +4,7 @@ const translations = {
     "nav.about": "About",
     "nav.contact": "Contact",
     "header.name": "Jiawei Chen",
-    "header.tagline": "Crystal Structure Prediction / Machine Learning / First-Principles Calculations",
+    "header.tagline": "Crystal Structure Prediction<br>Machine Learning<br>First-Principles Calculations",
     "header.cta": "Get in touch",
     "work.title": "My Work",
     "work.project1.title": "Interpretable Descriptors for Hydrogen-Based Superconductors",
@@ -25,7 +25,7 @@ const translations = {
     "nav.about": "关于",
     "nav.contact": "联系",
     "header.name": "陈嘉维",
-    "header.tagline": "晶体结构预测 / 机器学习 / 第一性原理计算",
+    "header.tagline": "\u6676\u4f53\u7ed3\u6784\u9884\u6d4b<br>\u673a\u5668\u5b66\u4e60<br>\u7b2c\u4e00\u6027\u539f\u7406\u8ba1\u7b97",
     "header.cta": "联系我",
     "work.title": "我的项目",
     "work.project1.title": "氢基超导体可解释描述符预测模型",
@@ -56,7 +56,11 @@ function setLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
+      if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = translations[lang][key];
+      } else {
+        el.textContent = translations[lang][key];
+      }
     }
   });
 }

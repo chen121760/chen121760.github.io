@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- 核心代码绿渐变 -->
+    <linearGradient id="grad-matrix" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2EA043"></stop> <!-- GitHub 绿 -->
+      <stop offset="100%" stop-color="#3FB950"></stop> <!-- 亮荧光绿 -->
+    </linearGradient>
+  </defs>
+
+  <!-- GitHub 经典暗灰背景 -->
+  <rect width="100" height="100" rx="22" fill="#0D1117"></rect>
+
+  <!-- 外围 C：低调的暗绿色系统壳 -->
+  <path d="M 82,20 A 40,40 0 1,0 82,80" fill="none" stroke="#1F6F43" stroke-width="10" stroke-linecap="round"></path>
+
+  <!-- 内部 jw：高亮的核心代码 -->
+  <g fill="none" stroke="url(#grad-matrix)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="4" fill="url(#grad-matrix)" stroke="none"></circle>
+    <path d="M 32,45 L 32,65 A 6,6 0 0,1 20,65"></path>
+    <path d="M 42,45 L 50,65 L 58,45 L 66,65 L 74,45"></path>
+  </g>
+</svg>
