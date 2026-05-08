@@ -56,24 +56,51 @@ html[lang="zh"] a {
     --border-light: 1px solid rgb(36, 35, 35);
 }
 
-/* Language Toggle */
-.lang-toggle {
+/* Language Switch */
+.lang-switch {
     position: fixed;
     top: 1.5rem;
     right: 2rem;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid var(--accent);
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    color: var(--white);
-    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 3px;
     cursor: pointer;
-    transition: background 0.3s;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
-.lang-toggle:hover {
+.lang-switch__option {
+    position: relative;
+    z-index: 2;
+    padding: 0.4rem 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.lang-switch__option.active {
+    color: #fff;
+}
+
+.lang-switch__slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(50% - 3px);
+    height: calc(100% - 6px);
     background: var(--accent);
+    border-radius: 17px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-switch.zh .lang-switch__slider {
+    transform: translateX(100%);
 }
 
 html {
@@ -362,7 +389,15 @@ body:not(.user-is-tabbing) a:focus {
     border-radius: 50%;
     z-index: 10;
     visibility: hidden;
-    transition: all .4s;
+    opacity: 0;
+    transform: scale(0);
+    transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-to-top.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
 }
 
 .back-to-top__image {
@@ -554,6 +589,8 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__image {
+    width: 100%;
+    height: auto;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
@@ -616,6 +653,59 @@ body:not(.user-is-tabbing) a:focus {
 
 .contact__info {
     max-width: var(--container-medium-width);
+}
+
+.contact__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.btn-copy {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--white-1);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-copy:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.btn-copy:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.btn-copy__tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: #222;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-copy__tooltip.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 /* --------------------------------------- */

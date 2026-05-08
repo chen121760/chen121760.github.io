@@ -22,24 +22,9 @@ const handleMouseDownOnce = () => {
 window.addEventListener('keydown', handleFirstTab)
 
 const backToTopButton = document.querySelector(".back-to-top");
-let isBackToTopRendered = false;
-
-let alterStyles = (isBackToTopRendered) => {
-  backToTopButton.style.visibility = isBackToTopRendered ? "visible" : "hidden";
-  backToTopButton.style.opacity = isBackToTopRendered ? 1 : 0;
-  backToTopButton.style.transform = isBackToTopRendered
-    ? "scale(1)"
-    : "scale(0)";
-};
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 700) {
-    isBackToTopRendered = true;
-    alterStyles(isBackToTopRendered);
-  } else {
-    isBackToTopRendered = false;
-    alterStyles(isBackToTopRendered);
-  }
+  backToTopButton.classList.toggle("visible", window.scrollY > 700);
 });
 
 // Dynamic copyright year
@@ -57,3 +42,18 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 revealElements.forEach(el => revealObserver.observe(el));
+
+// Copy email to clipboard
+document.getElementById('copy-email').addEventListener('click', () => {
+  const email = '2285450581@qq.com';
+  const tooltip = document.querySelector('.btn-copy__tooltip');
+  navigator.clipboard.writeText(email).then(() => {
+    const lang = document.documentElement.getAttribute('lang') || 'en';
+    tooltip.textContent = lang === 'zh' ? '已复制' : 'Copied!';
+    tooltip.classList.add('show');
+    setTimeout(() => {
+      tooltip.classList.remove('show');
+      tooltip.textContent = lang === 'zh' ? '复制' : 'Copy';
+    }, 1500);
+  });
+});

@@ -18,7 +18,8 @@ const translations = {
     "about.text": "I am a M.S. candidate in Materials Physics and Chemistry at Guangdong University of Technology. My research focuses on crystal structure prediction, machine learning-assisted materials design, and first-principles calculations.",
     "about.resume": "My Resume",
     "contact.title": "Get in Touch",
-    "contact.text": "If you are interested in my research, have questions about my projects, or would like to discuss potential collaborations, feel free to reach out."
+    "contact.text": "If you are interested in my research, have questions about my projects, or would like to discuss potential collaborations, feel free to reach out.",
+    "contact.copy": "Copy"
   },
   zh: {
     "nav.work": "项目",
@@ -39,7 +40,8 @@ const translations = {
     "about.text": "广东工业大学材料物理与化学专业硕士研究生在读。研究方向为晶体结构预测、机器学习辅助材料设计与第一性原理计算。",
     "about.resume": "我的简历",
     "contact.title": "联系方式",
-    "contact.text": "如果您对我的研究感兴趣、对项目有疑问，或希望探讨合作，欢迎随时联系我。"
+    "contact.text": "如果您对我的研究感兴趣、对项目有疑问，或希望探讨合作，欢迎随时联系我。",
+    "contact.copy": "复制"
   }
 };
 
@@ -50,8 +52,12 @@ function setLanguage(lang) {
   localStorage.setItem('lang', lang);
   document.documentElement.setAttribute('lang', lang);
 
-  const toggleBtn = document.getElementById('lang-toggle');
-  toggleBtn.textContent = lang === 'en' ? '中文' : 'EN';
+  // Update switch state
+  const langSwitch = document.getElementById('lang-toggle');
+  langSwitch.classList.toggle('zh', lang === 'zh');
+  langSwitch.querySelectorAll('.lang-switch__option').forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.lang === lang);
+  });
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
@@ -71,11 +77,11 @@ function setLanguage(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.getElementById('lang-toggle');
+  const langSwitch = document.getElementById('lang-toggle');
 
   setLanguage(currentLang);
 
-  toggleBtn.addEventListener('click', () => {
+  langSwitch.addEventListener('click', () => {
     setLanguage(currentLang === 'en' ? 'zh' : 'en');
   });
 });
