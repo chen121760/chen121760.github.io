@@ -2,26 +2,7 @@
 /* ----- Basic Setup ----- */
 /* --------------------------------------- */
 
-@font-face {
-    font-family: 'Hk Grotesk';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/HKGrotesk-Regular.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/Jost-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Source Han Serif CN';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/SourceHanSerifCN-Regular.otf') format('opentype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 html[lang="en"] body {
     font-family: var(--font-body);
@@ -48,15 +29,15 @@ html[lang="zh"] a {
     --font-size-medium-1: 3.6rem;
     --font-size-large: 5.5rem;
     --font-size-huge: 7.5rem;
-    --font-latin: 'Jost', 'Inter', sans-serif;
-    --font-body: 'Hk Grotesk', 'Inter', sans-serif;
-    --font-zh: 'Source Han Serif CN', 'Noto Serif SC', 'SimSun', serif;
+    --font-latin: 'Poppins', 'Open Sans', sans-serif;
+    --font-body: 'Open Sans', 'Poppins', sans-serif;
+    --font-zh: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
 
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
 
     --black: #000;
-    --pink: #248067;
+    --accent: #248067;
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
 
@@ -82,7 +63,7 @@ html[lang="zh"] a {
     right: 2rem;
     z-index: 1000;
     background: rgba(0, 0, 0, 0.7);
-    border: 1px solid var(--pink);
+    border: 1px solid var(--accent);
     border-radius: 4px;
     padding: 0.5rem 1rem;
     color: var(--white);
@@ -92,13 +73,31 @@ html[lang="zh"] a {
 }
 
 .lang-toggle:hover {
-    background: var(--pink);
+    background: var(--accent);
 }
 
 html {
     font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: var(--accent);
+    color: #fff;
+    padding: 1rem 2rem;
+    z-index: 9999;
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
 }
 
 @media(max-width: 1000px) {
@@ -195,7 +194,7 @@ h2::after {
     display: block;
     height: 2px;
     width: 10rem;
-    background: var(--pink);
+    background: var(--accent);
     margin: var(--gutter-small) 0;
 }
 
@@ -246,7 +245,7 @@ a {
 
 button:focus,
 a:focus {
-    outline: 2px solid var(--pink);
+    outline: 2px solid var(--accent);
 }
 
 body:not(.user-is-tabbing) button:focus,
@@ -255,22 +254,24 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link:hover {
-    color: var(--pink);
+    color: var(--accent);
 }
 
 .btn {
     position: relative;
     display: inline-block;
-    padding: 1rem 4.2rem;
+    padding: 1.2rem 4.2rem;
+    min-height: 4.4rem;
     text-decoration: none;
     color: inherit;
-    border: 1px solid  var(--pink);
+    border: 1px solid  var(--accent);
     font-weight: 400;
     z-index: 0;
 }
 
 .btn:focus {
-    outline: none;
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 .btn::after {
@@ -289,20 +290,20 @@ body:not(.user-is-tabbing) a:focus {
 .btn:hover::after,
 .btn:focus::after {
     right: 0;
-    background: var(--pink);
+    background: var(--accent);
 }
 
-.btn--pink {
-    background: var(--pink);
+.btn--accent {
+    background: var(--accent);
     transition: all 0.2s;
 }
 
-.btn--pink::after {
+.btn--accent::after {
     display: none;
 }
 
-.btn--pink:hover,
-.btn--pink:focus {
+.btn--accent:hover,
+.btn--accent:focus {
     background: transparent;
 }
 
@@ -312,8 +313,9 @@ body:not(.user-is-tabbing) a:focus {
     padding: .6rem;
     color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid var(--pink);
+    border-bottom: 1px solid var(--accent);
     z-index: 0;
+    transition: color 0.2s ease;
 }
 
 .link__text::after {
@@ -330,13 +332,14 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link__text:focus {
-    outline: none;
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 .link__text:hover::after,
 .link__text:focus:after {
     right: 0;
-    background: var(--pink);
+    background: var(--accent);
 }
 
 .link__text span {
@@ -355,7 +358,7 @@ body:not(.user-is-tabbing) a:focus {
     align-items: center;
     height: 5.5rem;
     width: 5.5rem;
-    background-color: var(--pink);
+    background-color: var(--accent);
     border-radius: 50%;
     z-index: 10;
     visibility: hidden;
@@ -437,13 +440,13 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .nav__link:hover {
-    color: var(--pink);
+    color: var(--accent);
 }
 
 .nav__link:hover::after {
     right: 0;
     height: 2px;
-    background: var(--pink);
+    background: var(--accent);
 }
 
 /* --------------------------------------- */
@@ -469,13 +472,14 @@ body:not(.user-is-tabbing) a:focus {
 .header__text p {
     margin: 1.5rem 0 3.5rem;
     max-width: var(--container-medium-width);
-    font-family: 'Jost', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: var(--font-size-medium);
 }
 
 @media(max-width: 500px) {
     .header {
         text-align: center;
+        background-attachment: scroll;
     }
 
     .header__text p {
@@ -575,32 +579,6 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- Clients ----- */
-/* --------------------------------------- */
-
-.client__logos {
-    display: flex;
-    justify-content: space-between;
-    filter: invert(100%) grayscale(100%) opacity(.8);
-}
-
-.client__logo {
-    height: 6.5rem;
-    max-width: 18rem;
-}
-
-@media(max-width: 1240px) {
-    .client__logos {
-        overflow-x: scroll;
-        padding: var(--gutter-normal);
-    }
-
-    .client__logo:not(:last-of-type) {
-        margin-right: var(--gutter-medium);
-    }
-}
-
-/* --------------------------------------- */
 /* ----- About ----- */
 /* --------------------------------------- */
 
@@ -662,21 +640,50 @@ body:not(.user-is-tabbing) a:focus {
 
 .footer__social-image {
     height: 4rem;
+    transition: transform 0.2s ease;
 }
 
-.footer__github-buttons {
-    display: flex;
-    justify-content: center;
-}
-
-.footer__github-buttons iframe {
-    height: 2.5rem;
-    width: 84px;
-    transform: translateY(3px);
+.footer__social-image:hover {
+    transform: scale(1.15);
 }
 
 @media(max-width: 500px) {
     .footer {
         padding: var(--gutter-medium) 0;
-    } 
+    }
+}
+
+/* --------------------------------------- */
+/* ----- Scroll Animations ----- */
+/* --------------------------------------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------------------------- */
+/* ----- Reduced Motion ----- */
+/* --------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
 }

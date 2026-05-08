@@ -11,9 +11,18 @@
   <meta name="description" content="Jiawei Chen - M.S. candidate at GDUT. Research in crystal structure prediction, machine learning, and first-principles calculations.">
   <meta name="keywords" content="Jiawei Chen, crystal structure prediction, machine learning, superconductors, USPEX, first-principles, materials science" />
   <link rel="stylesheet" href="index.css" />
+  <script>
+    (function() {
+      var lang = localStorage.getItem('lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+    })();
+  </script>
 </head>
 
 <body>
+
+  <!-- Skip Link -->
+  <a href="#work" class="skip-link">Skip to main content</a>
 
   <!-- Language Toggle -->
   <button class="lang-toggle" id="lang-toggle" aria-label="Switch Language">中文</button>
@@ -40,7 +49,7 @@
           <span data-i18n="header.name">Jiawei Chen</span>
         </h1>
         <p data-i18n="header.tagline" data-i18n-html class="header__tagline">Crystal Structure Prediction<br>Machine Learning<br>First-Principles Calculations</p>
-        <a href="#contact" class="btn btn--pink" data-i18n="header.cta">Get in touch</a>
+        <a href="#contact" class="btn btn--accent" data-i18n="header.cta">Get in touch</a>
       </div>
     </div>
   </header>
@@ -54,7 +63,7 @@
         <h2 data-i18n="work.title">My Work</h2>
         <div class="work__boxes">
 
-          <div class="work__box">
+          <div class="work__box reveal">
             <div class="work__text">
               <h3 data-i18n="work.project1.title">Interpretable Descriptors for Hydrogen-Based Superconductors</h3>
               <p data-i18n="work.project1.desc">
@@ -82,11 +91,11 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/project-1.png" class="work__image" alt="Hydride Tc Predictor" />
+              <img src="./images/project-1.png" class="work__image" alt="Hydride Tc Predictor" title="Hydride Tc Predictor - Interpretable SISSO descriptor models for hydrogen-based superconductors" loading="lazy" />
             </div>
           </div>
 
-          <div class="work__box">
+          <div class="work__box reveal">
             <div class="work__text">
               <h3 data-i18n="work.project2.title">USPEX Analyzer</h3>
               <p data-i18n="work.project2.desc">
@@ -112,7 +121,7 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/USPEX-Analyzer.png" class="work__image" alt="USPEX Analyzer" />
+              <img src="./images/USPEX-Analyzer.png" class="work__image" alt="USPEX Analyzer" title="USPEX Analyzer - Interactive analysis platform for crystal structure prediction" loading="lazy" />
             </div>
           </div>
 
@@ -125,18 +134,18 @@
     <section class="about" id="about">
       <div class="row">
         <h2 data-i18n="about.title">About Me</h2>
-        <div class="about__content">
+        <div class="about__content reveal">
           <div class="about__text">
             <p data-i18n="about.text">
               I am a M.S. candidate in Materials Physics and Chemistry at Guangdong University of Technology.
               My research focuses on crystal structure prediction, machine learning-assisted materials design,
               and first-principles calculations.
             </p>
-            <a href="./Resume/resume-en.pdf" target="_blank" class="btn" data-i18n="about.resume" data-i18n-href-zh="./Resume/resume-en.pdf">My Resume</a>
+            <a href="./Resume/resume-en.pdf" target="_blank" class="btn" data-i18n="about.resume" data-i18n-href-en="./Resume/resume-en.pdf" data-i18n-href-zh="./Resume/resume-en.pdf">My Resume</a>
           </div>
 
           <div class="about__photo-container">
-            <img class="about__photo" src="./images/syed-ali-hussnain.jpg" alt="Personal avatar of Jiawei Chen" style="width: 80%;" />
+            <img class="about__photo" src="./images/avatar.jpg" alt="Personal avatar of Jiawei Chen" style="width: 80%;" />
           </div>
         </div>
       </div>
@@ -148,7 +157,7 @@
   <section class="contact" id="contact">
     <div class="row">
       <h2 data-i18n="contact.title">Get in Touch</h2>
-      <div class="contact__info">
+      <div class="contact__info reveal">
         <p data-i18n="contact.text">
           If you are interested in my research, have questions about my projects,
           or would like to discuss potential collaborations, feel free to reach out.
@@ -171,7 +180,7 @@
       </ul>
 
       <p>
-        &copy; 2025 Jiawei Chen. Template by <a href="https://nisar.dev" class="link">Nisar</a>.
+        &copy; <span id="year"></span> Jiawei Chen. Template by <a href="https://nisar.dev" class="link">Nisar</a>.
       </p>
     </div>
   </footer>
@@ -179,8 +188,8 @@
   <a href="#top" class="back-to-top" title="Back to Top">
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
   </a>
-  <script src="./i18n.js"></script>
-  <script src="./index.js"></script>
+  <script src="./i18n.js" defer></script>
+  <script src="./index.js" defer></script>
 </body>
 
 </html>

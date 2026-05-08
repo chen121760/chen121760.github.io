@@ -8,7 +8,7 @@ const translations = {
     "header.cta": "Get in touch",
     "work.title": "My Work",
     "work.project1.title": "Interpretable Descriptors for Hydrogen-Based Superconductors",
-    "work.project1.desc": "Constructed interpretable SISSO descriptor models to predict the critical temperature of hydrogen-based superconductors at moderate pressures. Published in Materials Today Physics (IF=9.7). The prediction formulas have been packaged into a Python tool and an online calculator.",
+    "work.project1.desc": "Constructed interpretable SISSO descriptor models to predict the critical temperature of hydrogen-based superconductors at moderate pressures. Published in Materials Today Physics (2026, 63, 102073). The prediction formulas have been packaged into a Python tool and an online calculator.",
     "work.project1.link": "Online Calculator",
     "work.project1.paper": "Paper",
     "work.project2.title": "USPEX Analyzer",
@@ -29,7 +29,7 @@ const translations = {
     "header.cta": "联系我",
     "work.title": "我的项目",
     "work.project1.title": "氢基超导体可解释描述符预测模型",
-    "work.project1.desc": "构建可解释的 SISSO 描述符模型，实现中等压力下氢基超导体临界温度的预测。成果发表于 Materials Today Physics (IF=9.7)。预测公式已封装为 Python 工具和在线计算器。",
+    "work.project1.desc": "构建可解释的 SISSO 描述符模型，实现中等压力下氢基超导体临界温度的预测。成果发表于 Materials Today Physics (2026, 63, 102073)。预测公式已封装为 Python 工具和在线计算器。",
     "work.project1.link": "在线计算器",
     "work.project1.paper": "论文",
     "work.project2.title": "USPEX Analyzer",
@@ -61,6 +61,11 @@ function setLanguage(lang) {
       } else {
         el.textContent = translations[lang][key];
       }
+    }
+    // Switch href based on language
+    const hrefAttr = el.getAttribute('data-i18n-href-' + lang);
+    if (hrefAttr) {
+      el.setAttribute('href', hrefAttr);
     }
   });
 }
