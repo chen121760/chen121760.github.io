@@ -15,10 +15,10 @@ const translations = {
     "work.project2.desc": "A browser-based interactive analysis platform for USPEX crystal structure prediction results. Features include convex hull visualization, Pareto front analysis, scatter plot explorer with GIF export, genealogy tracking, and flexible data filtering and export.",
     "work.project2.link": "Visit Site",
     "about.title": "About Me",
-    "about.text": "I am a M.S. candidate in Materials Physics and Chemistry at Guangdong University of Technology. My research focuses on crystal structure prediction, machine learning-assisted materials design, and first-principles calculations.",
+    "about.text": "I am a M.S. candidate in Materials Physics and Chemistry at Guangdong University of Technology, expecting to graduate in June 2027. My research focuses on crystal structure prediction, machine learning-assisted materials design, and first-principles calculations. I am seeking a PhD position starting in Fall 2027, with research interests in materials genome, machine learning interatomic potentials, and molecular dynamics.",
     "about.resume": "My Resume",
     "contact.title": "Get in Touch",
-    "contact.text": "If you are interested in my research, have questions about my projects, or would like to discuss potential collaborations, feel free to reach out.",
+    "contact.text": "I am seeking a PhD position starting Fall 2027. If you are interested in my research, have questions about my projects, or would like to discuss potential opportunities, feel free to reach out.",
     "contact.copy": "Copy"
   },
   zh: {
@@ -37,10 +37,10 @@ const translations = {
     "work.project2.desc": "基于浏览器的 USPEX 晶体结构预测后处理平台。支持凸包可视化、Pareto 前沿分析、散点图探索与 GIF 导出、族谱追踪，以及灵活的数据筛选与导出功能。",
     "work.project2.link": "访问网站",
     "about.title": "关于我",
-    "about.text": "广东工业大学材料物理与化学专业硕士研究生在读。研究方向为晶体结构预测、机器学习辅助材料设计与第一性原理计算。",
+    "about.text": "广东工业大学材料物理与化学专业硕士研究生在读，预计2027年6月毕业。研究方向为晶体结构预测、机器学习辅助材料设计与第一性原理计算。计划2027年秋季开始攻读博士，对材料基因、机器学习势函数和分子动力学方向特别感兴趣。",
     "about.resume": "我的简历",
     "contact.title": "联系方式",
-    "contact.text": "如果您对我的研究感兴趣、对项目有疑问，或希望探讨合作，欢迎随时联系我。",
+    "contact.text": "我计划2027年秋季开始攻读博士。如果您对我的研究感兴趣、对项目有疑问，或希望探讨合作机会，欢迎随时联系我。",
     "contact.copy": "复制"
   }
 };
