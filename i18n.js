@@ -15,7 +15,7 @@ const translations = {
     "work.project2.desc": "A browser-based interactive analysis platform for USPEX crystal structure prediction results. Features include convex hull visualization, Pareto front analysis, scatter plot explorer with GIF export, genealogy tracking, and flexible data filtering and export.",
     "work.project2.link": "Visit Site",
     "about.title": "About Me",
-    "about.text": "I am a M.S. candidate in Materials Physics and Chemistry at Guangdong University of Technology, expecting to graduate in June 2027. My research focuses on crystal structure prediction, machine learning-assisted materials design, and first-principles calculations. I am seeking a PhD position starting in Fall 2027, with research interests in materials genome, machine learning interatomic potentials, and molecular dynamics.",
+    "about.text": "I am a master's student in Materials Physics and Chemistry at Guangdong University of Technology, graduating in June 2027. My research focuses on crystal structure prediction, machine learning-assisted materials design, and first-principles calculations. I am looking for a PhD starting in Fall 2027, and I am particularly interested in materials genome, machine learning interatomic potentials, and molecular dynamics.",
     "about.resume": "My Resume",
     "contact.title": "Get in Touch",
     "contact.text": "I am seeking a PhD position starting Fall 2027. If you are interested in my research, have questions about my projects, or would like to discuss potential opportunities, feel free to reach out.",
