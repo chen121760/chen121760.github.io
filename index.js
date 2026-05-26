@@ -45,7 +45,7 @@ revealElements.forEach(el => revealObserver.observe(el));
 
 // Copy email to clipboard
 document.getElementById('copy-email').addEventListener('click', () => {
-  const email = '2285450581@qq.com';
+  const email = 'chen121760@qq.com';
   const tooltip = document.querySelector('.btn-copy__tooltip');
   navigator.clipboard.writeText(email).then(() => {
     const lang = document.documentElement.getAttribute('lang') || 'en';
