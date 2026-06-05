@@ -18,7 +18,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Jiawei Chen | Crystal Structure Prediction & Machine Learning">
   <meta property="og:description" content="M.S. candidate at GDUT. Research in crystal structure prediction, machine learning, and first-principles calculations.">
-  <meta property="og:image" content="./images/project-1.png">
+  <meta property="og:image" content="./images/project-1a.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -34,7 +34,7 @@
 <body>
 
   <!-- Skip Link -->
-  <a href="#work" class="skip-link">Skip to main content</a>
+  <a href="#about" class="skip-link">Skip to main content</a>
 
   <!-- Language Toggle -->
   <div class="lang-switch" id="lang-toggle" aria-label="Switch Language">
@@ -49,13 +49,10 @@
     <div class="row">
       <nav class="nav" role="navigation">
         <ul class="nav__items">
+          <li class="nav__item"><a href="#about" class="nav__link" data-i18n="nav.about">About</a></li>
+          <li class="nav__item"><a href="#publications" class="nav__link" data-i18n="nav.publications">Publications</a></li>
           <li class="nav__item"><a href="#work" class="nav__link" data-i18n="nav.work">Work</a></li>
-          <li class="nav__item">
-            <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
-          </li>
+          <li class="nav__item"><a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -72,20 +69,182 @@
 
   <main role="main">
 
+    <!-- ***** About ***** -->
+
+    <section class="about" id="about">
+      <div class="row">
+        <h2 data-i18n="about.title">About Me</h2>
+
+        <div class="about__content reveal">
+
+          <div class="about__text">
+            <!-- Identity -->
+            <p data-i18n="about.identity">
+              I am a M.S. candidate in Materials Physics and Chemistry at Guangdong University of Technology,
+              expected to graduate in June 2027.
+            </p>
+
+            <!-- Research Focus -->
+            <p data-i18n="about.research">
+              My research focuses on crystal structure prediction, machine learning-assisted materials design,
+              and first-principles calculations. I am particularly interested in materials genome,
+              machine learning interatomic potentials, and molecular dynamics.
+            </p>
+
+            <!-- PhD Seeking — visually highlighted -->
+            <div class="about__highlight">
+              <p data-i18n="about.phd">
+                I am looking for a PhD position starting Fall 2027.
+              </p>
+            </div>
+
+            <!-- Resume Button -->
+            <a href="./Resume/resume-en.pdf" target="_blank" class="btn"
+               data-i18n="about.resume"
+               data-i18n-href-en="./Resume/resume-en.pdf"
+               data-i18n-href-zh="./Resume/resume-zh.pdf">My Resume</a>
+          </div>
+
+          <div class="about__photo-container">
+            <img class="about__photo" src="./images/avatar.jpg" alt="Personal avatar of Jiawei Chen" style="width: 80%;" />
+          </div>
+
+        </div>
+
+        <!-- Education Timeline -->
+        <div class="education reveal">
+          <h3 data-i18n="education.title">Education</h3>
+          <div class="education__list">
+
+            <div class="education__item">
+              <div class="education__dot"></div>
+              <div class="education__card">
+                <div class="education__range" data-i18n="education.ms.range">2024.09 – 2027.06 (Expected)</div>
+                <div class="education__degree" data-i18n="education.ms.degree">M.S. in Materials Physics and Chemistry</div>
+                <div class="education__school" data-i18n="education.ms.school">Guangdong University of Technology, School of Physics and Optoelectronic Engineering</div>
+                <div class="education__gpa" data-i18n="education.ms.gpa">GPA: 4.01 / 5.0</div>
+              </div>
+            </div>
+
+            <div class="education__item">
+              <div class="education__dot"></div>
+              <div class="education__card">
+                <div class="education__range" data-i18n="education.bs.range">2020.09 – 2024.06</div>
+                <div class="education__degree" data-i18n="education.bs.degree">B.S. in Applied Chemistry</div>
+                <div class="education__school" data-i18n="education.bs.school">Guangdong University of Technology, School of Chemical Engineering and Light Industry</div>
+                <div class="education__gpa" data-i18n="education.bs.gpa">GPA: 3.73 / 5.0</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ***** Publications ***** -->
+
+    <section class="publications" id="publications">
+      <div class="row">
+        <h2 data-i18n="publications.title">Publications</h2>
+
+        <div class="pubs__list">
+
+          <!-- Paper 1 -->
+          <div class="pubs__item reveal">
+            <div class="pubs__index">1</div>
+            <div class="pubs__body">
+              <p class="pubs__title">
+                <a href="https://www.sciencedirect.com/science/article/pii/S2542529326000647" target="_blank" data-i18n="pubs.paper1.title">
+                  Interpretable descriptors enable prediction of hydrogen-based superconductors at moderate pressures
+                </a>
+              </p>
+              <p class="pubs__authors" data-i18n="pubs.paper1.authors" data-i18n-html>
+                <strong>Chen J</strong>, Peng J, Liang Y, et al.
+              </p>
+              <p class="pubs__journal">
+                <em>Materials Today Physics</em>, 2026, 63: 102073
+              </p>
+              <div class="pubs__links">
+                <a href="https://www.sciencedirect.com/science/article/pii/S2542529326000647" target="_blank" class="pubs__doi">DOI</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paper 2 -->
+          <div class="pubs__item reveal">
+            <div class="pubs__index">2</div>
+            <div class="pubs__body">
+              <p class="pubs__title">
+                <a href="https://pubs.acs.org/doi/10.1021/acs.inorgchem.5c06103" target="_blank" data-i18n="pubs.paper2.title">
+                  High-Throughput Screening of Bulk Boride Superconductors with Honeycomb-Ruby Frameworks
+                </a>
+              </p>
+              <p class="pubs__authors" data-i18n="pubs.paper2.authors" data-i18n-html>
+                Liang Y*, <strong>Chen J*</strong>, Huang Y, et al.
+              </p>
+              <p class="pubs__journal">
+                <em>Inorganic Chemistry</em>, 2026, 65(10): 5731–5739
+              </p>
+              <div class="pubs__links">
+                <a href="https://pubs.acs.org/doi/10.1021/acs.inorgchem.5c06103" target="_blank" class="pubs__doi">DOI</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paper 3 -->
+          <div class="pubs__item reveal">
+            <div class="pubs__index">3</div>
+            <div class="pubs__body">
+              <p class="pubs__title">
+                <a href="https://pubs.rsc.org/en/content/articlelanding/2023/cp/d3cp01830j" target="_blank" data-i18n="pubs.paper3.title">
+                  Activating HfX₂ (X = S, Se and Te) for the hydrogen evolution reaction by introducing defects: a first-principles study
+                </a>
+              </p>
+              <p class="pubs__authors" data-i18n="pubs.paper3.authors" data-i18n-html>
+                <strong>Chen J*</strong>, Zhang R*, Luo J, et al.
+              </p>
+              <p class="pubs__journal">
+                <em>Physical Chemistry Chemical Physics</em>, 2023, 25(38): 26043–26048
+              </p>
+              <div class="pubs__links">
+                <a href="https://pubs.rsc.org/en/content/articlelanding/2023/cp/d3cp01830j" target="_blank" class="pubs__doi">DOI</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ORCID -->
+        <div class="pubs__orcid reveal">
+          <a href="https://orcid.org/0009-0001-8796-662X" target="_blank" class="orcid__link" data-i18n="publications.orcid">
+            ORCID: 0009-0001-8796-662X
+          </a>
+        </div>
+      </div>
+    </section>
+
+
     <!-- ***** Work ***** -->
 
     <section class="work" id="work">
       <div class="row">
-        <h2 data-i18n="work.title">My Work</h2>
+        <h2 data-i18n="work.title">Projects</h2>
         <div class="work__boxes">
 
-          <div class="work__box reveal">
+          <!-- Project 1: Hydride Tc Predictor (tool card) -->
+          <div class="work__box work__box--tool reveal">
             <div class="work__text">
+              <div class="work__badges">
+                <span class="work__badge work__badge--paper" data-i18n="work.badge.paper">Paper</span>
+                <span class="work__badge work__badge--tool" data-i18n="work.badge.tool">Tool</span>
+              </div>
               <h3 data-i18n="work.project1.title">Interpretable Descriptors for Hydrogen-Based Superconductors</h3>
               <p data-i18n="work.project1.desc">
                 Constructed interpretable SISSO descriptor models to predict the critical temperature
-                of hydrogen-based superconductors. Published in Materials Today Physics (2026, 63, 102073).
-                The prediction formulas have been packaged into a Python tool and an online calculator.
+                of hydrogen-based superconductors at moderate pressures. Published in Materials Today Physics
+                (2026, 63, 102073). The prediction formulas have been packaged into a Python tool and an
+                online calculator.
               </p>
               <ul class="work__list">
                 <li>Python</li>
@@ -107,12 +266,18 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/project-1.png" class="work__image" alt="Hydride Tc Predictor" title="Hydride Tc Predictor - Interpretable SISSO descriptor models for hydrogen-based superconductors" loading="lazy" width="1658" height="1000" />
+              <img src="./images/project-1a.png" class="work__image work__image--main" id="project1-main" alt="Hydride Tc Predictor" loading="lazy" />
+              <div class="work__thumbs">
+                <img src="./images/project-1a.png" class="work__thumb active" data-main="#project1-main" loading="lazy" />
+                <img src="./images/project-1b.png" class="work__thumb" data-main="#project1-main" loading="lazy" />
+              </div>
             </div>
           </div>
 
-          <div class="work__box reveal">
+          <!-- Project 2: USPEX Analyzer (tool card with GIF showcase) -->
+          <div class="work__box work__box--tool reveal">
             <div class="work__text">
+              <div class="work__badge work__badge--tool" data-i18n="work.badge.tool">Tool</div>
               <h3 data-i18n="work.project2.title">USPEX Analyzer</h3>
               <p data-i18n="work.project2.desc">
                 A browser-based interactive analysis platform for USPEX crystal structure prediction results.
@@ -137,7 +302,60 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/project-2.png" class="work__image" alt="USPEX Analyzer" title="USPEX Analyzer - Interactive analysis platform for crystal structure prediction" loading="lazy" width="2520" height="1400" />
+              <!-- GIF showcase row -->
+              <p class="work__gif-label" data-i18n="work.giflabel">Feature Demos</p>
+              <div class="work__gif-row">
+                <div class="work__gif-item reveal">
+                  <div class="work__gif-card" tabindex="0">
+                    <img src="./images/demo-scatter.gif" class="work__gif" alt="Scatter Plot — Data Exploration" loading="lazy"
+                         data-i18n-alt-en="Scatter Plot — Data Exploration" data-i18n-alt-zh="散点图 — 数据探索" />
+                    <div class="work__gif-overlay">
+                      <svg class="work__gif-overlay__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <span class="work__gif-overlay__caption" data-i18n="work.gif.scatter">Data Exploration</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work__gif-item reveal">
+                  <div class="work__gif-card" tabindex="0">
+                    <img src="./images/demo-table.gif" class="work__gif" alt="Table & Genealogy" loading="lazy"
+                         data-i18n-alt-en="Table & Genealogy" data-i18n-alt-zh="数据表格与族谱" />
+                    <div class="work__gif-overlay">
+                      <svg class="work__gif-overlay__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <span class="work__gif-overlay__caption" data-i18n="work.gif.table">Table & Genealogy</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work__gif-item reveal">
+                  <div class="work__gif-card" tabindex="0">
+                    <img src="./images/demo-HullWorkshop.gif" class="work__gif" alt="Convex Hull Workshop" loading="lazy"
+                         data-i18n-alt-en="Convex Hull Workshop" data-i18n-alt-zh="凸包工作台" />
+                    <div class="work__gif-overlay">
+                      <svg class="work__gif-overlay__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <span class="work__gif-overlay__caption" data-i18n="work.gif.hull">Hull Workshop</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work__gif-item reveal">
+                  <div class="work__gif-card" tabindex="0">
+                    <img src="./images/demo-filter.gif" class="work__gif" alt="Filter & Export" loading="lazy"
+                         data-i18n-alt-en="Filter & Export" data-i18n-alt-zh="筛选与导出" />
+                    <div class="work__gif-overlay">
+                      <svg class="work__gif-overlay__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <span class="work__gif-overlay__caption" data-i18n="work.gif.filter">Filter & Export</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work__gif-item reveal">
+                  <div class="work__gif-card" tabindex="0">
+                    <img src="./images/demo-Hypervolume.gif" class="work__gif" alt="Hypervolume" loading="lazy"
+                         data-i18n-alt-en="Hypervolume" data-i18n-alt-zh="Hypervolume" />
+                    <div class="work__gif-overlay">
+                      <svg class="work__gif-overlay__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <span class="work__gif-overlay__caption" data-i18n="work.gif.hypervolume">Hypervolume</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -145,67 +363,73 @@
       </div>
     </section>
 
-    <!-- ***** About ***** -->
+    <!-- ***** Honors ***** -->
 
-    <section class="about" id="about">
+    <section class="honors" id="honors">
       <div class="row">
-        <h2 data-i18n="about.title">About Me</h2>
-        <div class="about__content reveal">
-          <div class="about__text">
-            <p data-i18n="about.text">
-              I am a M.S. candidate in Materials Physics and Chemistry at Guangdong University of Technology.
-              My research focuses on crystal structure prediction, machine learning-assisted materials design,
-              and first-principles calculations.
-            </p>
-            <a href="./Resume/resume-en.pdf" target="_blank" class="btn" data-i18n="about.resume" data-i18n-href-en="./Resume/resume-en.pdf" data-i18n-href-zh="./Resume/resume-zh.pdf">My Resume</a>
-          </div>
+        <h2 data-i18n="honors.title">Honors &amp; Awards</h2>
+        <ul class="honors__list reveal">
+          <li data-i18n="honors.1">Exempted from Graduate Entrance Examination</li>
+          <li data-i18n="honors.2">Graduate Elite Talent Program, Guangdong University of Technology</li>
+          <li data-i18n="honors.3">First-Class Graduate Scholarship (2024, 2024–2025), Guangdong University of Technology</li>
+          <li data-i18n="honors.4">Third Prize, South China Undergraduate Physics Experiment Competition (2022)</li>
+          <li data-i18n="honors.5">Second Prize, Guangdong Division of the National Mathematical Contest in Modeling (2022)</li>
+          <li data-i18n="honors.6">Outstanding Student Scholarship (2020–2023), Guangdong University of Technology</li>
+        </ul>
+      </div>
+    </section>
 
-          <div class="about__photo-container">
-            <img class="about__photo" src="./images/avatar.jpg" alt="Personal avatar of Jiawei Chen" style="width: 80%;" />
+    <!-- ***** Contact ***** -->
+
+    <section class="contact" id="contact">
+      <div class="row">
+        <h2 data-i18n="contact.title">Get in Touch</h2>
+        <div class="contact__info reveal">
+          <p data-i18n="contact.text">
+            If you are interested in my research, have questions about my projects,
+            or would like to discuss potential opportunities, feel free to reach out.
+          </p>
+          <div class="contact__actions">
+            <a href="mailto:chen121760@qq.com" class="btn">chen121760@qq.com</a>
+            <button class="btn-copy" id="copy-email" aria-label="Copy email address" data-i18n-tooltip-en="Copy" data-i18n-tooltip-zh="复制">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span class="btn-copy__tooltip" data-i18n="contact.copy">Copy</span>
+            </button>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ***** Footer ***** -->
+
+    <footer role="contentinfo" class="footer">
+      <div class="row">
+        <ul class="footer__social-links">
+          <li class="footer__social-link-item">
+            <a href="https://github.com/chen121760" title="Link to Github Profile">
+              <img src="./images/github.svg" class="footer__social-image" alt="Github">
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          &copy; <span id="year"></span> Jiawei Chen. Template by <a href="https://nisar.dev" class="link">Nisar</a>.
+        </p>
+      </div>
+    </footer>
+
   </main>
 
-  <!-- ***** Contact ***** -->
-
-  <section class="contact" id="contact">
-    <div class="row">
-      <h2 data-i18n="contact.title">Get in Touch</h2>
-      <div class="contact__info reveal">
-        <p data-i18n="contact.text">
-          If you are interested in my research, have questions about my projects,
-          or would like to discuss potential collaborations, feel free to reach out.
-        </p>
-        <div class="contact__actions">
-          <a href="mailto:chen121760@qq.com" class="btn">chen121760@qq.com</a>
-          <button class="btn-copy" id="copy-email" aria-label="Copy email address" data-i18n-tooltip-en="Copy" data-i18n-tooltip-zh="复制">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <span class="btn-copy__tooltip" data-i18n="contact.copy">Copy</span>
-          </button>
-        </div>
-      </div>
+  <!-- GIF Lightbox -->
+  <div class="lightbox" id="gif-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox__arrow lightbox__arrow--prev" id="lightbox-prev" aria-label="Previous">&lsaquo;</button>
+    <button class="lightbox__arrow lightbox__arrow--next" id="lightbox-next" aria-label="Next">&rsaquo;</button>
+    <div class="lightbox__content">
+      <img class="lightbox__image" id="lightbox-img" src="" alt="" />
+      <p class="lightbox__caption" id="lightbox-caption"></p>
     </div>
-  </section>
-
-  <!-- ***** Footer ***** -->
-
-  <footer role="contentinfo" class="footer">
-    <div class="row">
-      <ul class="footer__social-links">
-        <li class="footer__social-link-item">
-          <a href="https://github.com/chen121760" title="Link to Github Profile">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
-          </a>
-        </li>
-      </ul>
-
-      <p>
-        &copy; <span id="year"></span> Jiawei Chen. Template by <a href="https://nisar.dev" class="link">Nisar</a>.
-      </p>
-    </div>
-  </footer>
+  </div>
 
   <a href="#top" class="back-to-top" title="Back to Top">
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
