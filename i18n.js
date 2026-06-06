@@ -61,6 +61,8 @@ const translations = {
     "work.project1.paper": "Paper",
     "work.project2.title": "USPEX Analyzer",
     "work.project2.desc": "A browser-based interactive analysis platform for USPEX crystal structure prediction results. Features include convex hull visualization, Pareto front analysis, scatter plot explorer with GIF export, genealogy tracking, and flexible data filtering and export.",
+    "work.project2.featured": "Listed on the USPEX official website as a recommended community tool.",
+    "work.project2.featured.link": "USPEX Tools \u2192",
     "work.project2.link": "Visit Site",
 
     /* Contact */
@@ -130,6 +132,8 @@ const translations = {
     "work.project1.paper": "论文",
     "work.project2.title": "USPEX Analyzer",
     "work.project2.desc": "基于浏览器的 USPEX 晶体结构预测后处理平台。支持凸包可视化、Pareto 前沿分析、散点图探索与 GIF 导出、族谱追踪，以及灵活的数据筛选与导出功能。",
+    "work.project2.featured": "该工具已被 USPEX 官方网站收录为社区推荐工具。",
+    "work.project2.featured.link": "USPEX 官方工具 \u2192",
     "work.project2.link": "访问网站",
 
     /* Contact */

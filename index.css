@@ -944,6 +944,32 @@ body:not(.user-is-tabbing) a:focus {
 ▲   border-color: var(--accent);
 }
 
+/* Featured note (e.g. USPEX official listing) */
+.work__featured-note {
+    margin-top: var(--gutter-small);
+    font-size: 1.5rem;
+    color: var(--white-1);
+    opacity: 0.85;
+    border-left: 2px solid var(--emphasis);
+    padding-left: 1.2rem;
+}
+
+.work__featured-link {
+    color: var(--emphasis);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: var(--font-latin);
+    white-space: nowrap;
+    margin-left: 0.4rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.work__featured-link:hover {
+    border-bottom-color: var(--emphasis);
+}
+
 /* GIF showcase */
 .work__gif-label {
     margin: var(--gutter-small) 0 1.6rem;
