@@ -37,12 +37,12 @@ html[lang="zh"] a {
     --line-height-small: 1.2;
 
     --black: #000;
-    --accent: #248067;
-    --emphasis: #862617;
+    --accent: #9B4545;
+    --emphasis: #B55848;
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
-    --card-bg: #132c33;
-    --card-bg-alt: #0f2329;
+    --card-bg: #1a2744;
+    --card-bg-alt: #141f35;
 
     --container-max-width: 1180px;
     --container-normal-width: 800px;
@@ -543,6 +543,60 @@ body:not(.user-is-tabbing) a:focus {
 
 .about__photo-container {
     margin-bottom: var(--gutter-normal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Avatar glow wrapper */
+.about__photo-wrap {
+    position: relative;
+    display: inline-block;
+    width: 80%;
+}
+
+/* Glow halo behind avatar */
+.about__photo-wrap::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(155, 69, 69, 0.25) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about__photo {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid rgba(155, 69, 69, 0.35);
+    box-shadow:
+        0 0 40px rgba(155, 69, 69, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about__photo:hover {
+    border-color: var(--accent);
+    box-shadow:
+        0 0 56px rgba(155, 69, 69, 0.35),
+        0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* Dark card wrapper for text block */
+.about__text-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: var(--gutter-normal);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 @media(min-width: 901px) {
@@ -561,7 +615,7 @@ body:not(.user-is-tabbing) a:focus {
     margin: var(--gutter-small-1) 0;
     padding: 1.6rem 2.2rem;
     border-left: 3px solid var(--emphasis);
-    background: rgba(134, 38, 23, 0.08);
+    background: rgba(181, 88, 72, 0.08);
     border-radius: 0 4px 4px 0;
 }
 
@@ -624,6 +678,14 @@ body:not(.user-is-tabbing) a:focus {
     border-radius: 8px;
     padding: var(--gutter-small) var(--gutter-normal);
     margin-left: var(--gutter-small);
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education__card:hover {
+    transform: translateX(6px);
+    border-color: rgba(155, 69, 69, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .education__range {
@@ -671,6 +733,14 @@ body:not(.user-is-tabbing) a:focus {
     font-size: var(--font-size-small);
     color: var(--white-1);
     line-height: 1.5;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.honors__list li:hover {
+    transform: translateY(-3px);
+    border-color: rgba(155, 69, 69, 0.25);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .honors__list li::before {
@@ -858,15 +928,15 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__badge--tool {
-    background: rgba(36, 128, 103, 0.15);
+    background: rgba(155, 69, 69, 0.15);
     color: var(--accent);
-    border: 1px solid rgba(36, 128, 103, 0.3);
+    border: 1px solid rgba(155, 69, 69, 0.3);
 }
 
 .work__badge--paper {
-    background: rgba(134, 38, 23, 0.12);
+    background: rgba(181, 88, 72, 0.12);
     color: var(--emphasis);
-    border: 1px solid rgba(134, 38, 23, 0.3);
+    border: 1px solid rgba(181, 88, 72, 0.3);
 }
 
 .work__links {
@@ -1326,7 +1396,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .lightbox__arrow:hover {
-    background: rgba(36, 128, 103, 0.3);
+    background: rgba(155, 69, 69, 0.3);
     border-color: var(--accent);
     transform: translateY(-50%) scale(1.08);
 }
