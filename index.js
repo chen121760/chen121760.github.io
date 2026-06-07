@@ -157,6 +157,30 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// Theme toggle
+(function() {
+  const themeSwitch = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+
+  function setThemeUI(theme) {
+    themeSwitch.classList.toggle('light', theme === 'light');
+    themeSwitch.querySelectorAll('.theme-switch__option').forEach(opt => {
+      opt.classList.toggle('active', opt.dataset.theme === theme);
+    });
+  }
+
+  // Init UI
+  setThemeUI(html.getAttribute('data-theme') || 'dark');
+
+  themeSwitch.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    setThemeUI(next);
+  });
+})();
+
 // Copy email to clipboard
 document.getElementById('copy-email').addEventListener('click', () => {
   const email = 'chen121760@qq.com';

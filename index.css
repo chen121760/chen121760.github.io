@@ -56,14 +56,43 @@ html[lang="zh"] a {
     --gutter-small: 2rem;
 
     --border-light: 1px solid rgb(36, 35, 35);
+
+    /* Card text (for light mode — same as body text in dark mode) */
+    --card-text: #e5e5e6da;
+    --card-heading: #f0e9f2;
 }
 
-/* Language Switch */
-.lang-switch {
+/* --------------------------------------- */
+/* ----- Light Theme ----- */
+/* Background: soft gray  |  Cards: muted navy  |  Alt sections: deep navy  |  Accent: burgundy */
+/* --------------------------------------- */
+
+[data-theme="light"] {
+    --black: #F5F6F8;
+    --accent: #9B4545;           /* same as dark — brand consistency */
+    --emphasis: #8B3E3E;
+    --white: #1A1A2E;
+    --white-1: #4A4A5C;
+    --card-bg: #2B4B6F;          /* muted classic navy */
+    --card-bg-alt: #1F3A58;      /* deep navy (replaces Klein blue) */
+    --border-light: 1px solid rgba(0, 0, 0, 0.10);
+    --card-text: #E4E8ED;
+    --card-heading: #FFFFFF;
+}
+
+/* Controls wrapper (lang + theme toggles, side by side) */
+.controls {
     position: fixed;
     top: 1.5rem;
     right: 2rem;
     z-index: 1000;
+    display: flex;
+    gap: 0.8rem;
+}
+
+/* Shared switch styles */
+.lang-switch,
+.theme-switch {
     display: flex;
     align-items: center;
     background: rgba(0, 0, 0, 0.6);
@@ -73,12 +102,18 @@ html[lang="zh"] a {
     cursor: pointer;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    position: relative;
 }
 
-.lang-switch__option {
+.lang-switch__option,
+.theme-switch__option {
     position: relative;
     z-index: 2;
-    padding: 0.4rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.8rem;
+    padding: 0.4rem 0.8rem;
     font-size: 1.3rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.5);
@@ -86,11 +121,18 @@ html[lang="zh"] a {
     user-select: none;
 }
 
-.lang-switch__option.active {
+.lang-switch__option.active,
+.theme-switch__option.active {
     color: #fff;
 }
 
-.lang-switch__slider {
+.theme-switch__option {
+    min-width: 3rem;
+    padding: 0.4rem 0.6rem;
+}
+
+.lang-switch__slider,
+.theme-switch__slider {
     position: absolute;
     top: 3px;
     left: 3px;
@@ -101,7 +143,8 @@ html[lang="zh"] a {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.lang-switch.zh .lang-switch__slider {
+.lang-switch.zh .lang-switch__slider,
+.theme-switch.light .theme-switch__slider {
     transform: translateX(100%);
 }
 
@@ -424,7 +467,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: var(--gutter-normal) 0;
 }
 
@@ -1452,4 +1495,155 @@ body:not(.user-is-tabbing) a:focus {
         right: 1.2rem;
         font-size: 3rem;
     }
+}
+
+/* --------------------------------------- */
+/* ----- Light Theme Overrides ----- */
+/* --------------------------------------- */
+
+/* --- Header text stays light (bg image overlay is dark) --- */
+[data-theme="light"] .header .heading-primary,
+[data-theme="light"] .header__text p,
+[data-theme="light"] .header .nav__link {
+    color: #f0e9f2;
+}
+
+/* --- Even sections (deep navy bg) → light text --- */
+[data-theme="light"] section:nth-of-type(even) {
+    color: var(--card-text);
+}
+
+[data-theme="light"] section:nth-of-type(even) h2,
+[data-theme="light"] section:nth-of-type(even) h3,
+[data-theme="light"] section:nth-of-type(even) a {
+    color: var(--card-heading);
+}
+
+[data-theme="light"] section:nth-of-type(even) h2::after {
+    background: var(--accent);
+}
+
+/* --- Cards on light sections (muted navy bg) → light text --- */
+[data-theme="light"] .about__text-card,
+[data-theme="light"] .education__card,
+[data-theme="light"] .work__box {
+    color: var(--card-text);
+}
+
+[data-theme="light"] .education__degree,
+[data-theme="light"] .work__box h3 {
+    color: var(--card-heading);
+}
+
+[data-theme="light"] .education__school,
+[data-theme="light"] .education__gpa {
+    color: var(--card-text);
+    opacity: 0.85;
+}
+
+[data-theme="light"] .work__box a.link__text {
+    color: var(--card-heading);
+}
+
+/* --- PhD highlight box --- */
+[data-theme="light"] .about__highlight {
+    background: rgba(155, 69, 69, 0.12);
+}
+
+[data-theme="light"] .about__highlight p {
+    color: var(--card-heading);
+}
+
+/* --- Pubs list (inside even section = deep navy bg, cards = muted navy) --- */
+[data-theme="light"] .pubs__title a {
+    color: var(--card-heading);
+}
+
+[data-theme="light"] .pubs__title a:hover {
+    color: var(--accent);
+}
+
+[data-theme="light"] .pubs__index {
+    background: var(--card-bg-alt);
+    color: var(--accent);
+}
+
+[data-theme="light"] .pubs__item:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Badge colors (use burgundy / emphasis) --- */
+[data-theme="light"] .work__badge--tool {
+    background: rgba(155, 69, 69, 0.12);
+    border-color: rgba(155, 69, 69, 0.3);
+    color: var(--accent);
+}
+
+[data-theme="light"] .work__badge--paper {
+    background: rgba(139, 62, 62, 0.1);
+    border-color: rgba(139, 62, 62, 0.25);
+    color: var(--emphasis);
+}
+
+/* --- Work featured note --- */
+[data-theme="light"] .work__featured-note,
+[data-theme="light"] .work__gif-label {
+    color: var(--card-text);
+    opacity: 0.75;
+}
+
+/* --- Avatar glow → burgundy --- */
+[data-theme="light"] .about__photo-wrap::before {
+    background: radial-gradient(circle, rgba(155, 69, 69, 0.2) 0%, transparent 70%);
+}
+
+[data-theme="light"] .about__photo {
+    border-color: rgba(155, 69, 69, 0.3);
+    box-shadow:
+        0 0 40px rgba(155, 69, 69, 0.12),
+        0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .about__photo:hover {
+    border-color: var(--accent);
+    box-shadow:
+        0 0 56px rgba(155, 69, 69, 0.25),
+        0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Hover overrides (adapt rgba to burgundy) --- */
+[data-theme="light"] .education__card:hover {
+    border-color: rgba(155, 69, 69, 0.4);
+}
+
+[data-theme="light"] .honors__list li {
+    color: var(--card-text);
+}
+
+[data-theme="light"] .honors__list li:hover {
+    border-color: rgba(155, 69, 69, 0.35);
+}
+
+[data-theme="light"] .lightbox__arrow:hover {
+    background: rgba(155, 69, 69, 0.2);
+    border-color: var(--accent);
+}
+
+/* --- GIF card hover focus ring --- */
+[data-theme="light"] .work__gif-card:hover,
+[data-theme="light"] .work__gif-card:focus-visible {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 0 2px var(--accent);
+}
+
+/* --- Education timeline vertical line --- */
+[data-theme="light"] .education__list::before {
+    background: var(--card-bg);
+}
+
+/* --- Invert monochrome SVGs for light bg --- */
+[data-theme="light"] .footer__social-image,
+[data-theme="light"] .work__code,
+[data-theme="light"] .back-to-top__image {
+    filter: invert(1);
 }
