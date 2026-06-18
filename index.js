@@ -170,10 +170,10 @@ document.addEventListener('keydown', (e) => {
   }
 
   // Init UI
-  setThemeUI(html.getAttribute('data-theme') || 'dark');
+  setThemeUI(html.getAttribute('data-theme') || 'light');
 
   themeSwitch.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme') || 'dark';
+    const current = html.getAttribute('data-theme') || 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);

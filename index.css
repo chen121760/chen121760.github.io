@@ -36,13 +36,15 @@ html[lang="zh"] a {
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
 
-    --black: #000;
-    --accent: #9B4545;
-    --emphasis: #B55848;
-    --white: #f0e9f2;
-    --white-1: #e5e5e6da;
-    --card-bg: #1a2744;
-    --card-bg-alt: #141f35;
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --card-hover: #eef2f8;
+    --text: #3f4259;
+    --muted: #6c6f85;
+    --border: #d8dce8;
+    --primary: #1e66f5;
+    --primary-rgb: 30, 102, 245;
+    --border-rgb: 216, 220, 232;
 
     --container-max-width: 1180px;
     --container-normal-width: 800px;
@@ -54,30 +56,22 @@ html[lang="zh"] a {
     --gutter-normal: 3rem;
     --gutter-small-1: 2.5rem;
     --gutter-small: 2rem;
-
-    --border-light: 1px solid rgb(36, 35, 35);
-
-    /* Card text (for light mode — same as body text in dark mode) */
-    --card-text: #e5e5e6da;
-    --card-heading: #f0e9f2;
 }
 
 /* --------------------------------------- */
-/* ----- Light Theme ----- */
-/* Background: soft gray  |  Cards: muted navy  |  Alt sections: deep navy  |  Accent: burgundy */
+/* ----- Dark Theme ----- */
 /* --------------------------------------- */
 
-[data-theme="light"] {
-    --black: #F5F6F8;
-    --accent: #9B4545;           /* same as dark — brand consistency */
-    --emphasis: #8B3E3E;
-    --white: #1A1A2E;
-    --white-1: #4A4A5C;
-    --card-bg: #2B4B6F;          /* muted classic navy */
-    --card-bg-alt: #1F3A58;      /* deep navy (replaces Klein blue) */
-    --border-light: 1px solid rgba(0, 0, 0, 0.10);
-    --card-text: #E4E8ED;
-    --card-heading: #FFFFFF;
+[data-theme="dark"] {
+    --bg: #181825;
+    --card: #1e1e2e;
+    --card-hover: #25273a;
+    --text: #cdd6f4;
+    --muted: #a6adc8;
+    --border: #313244;
+    --primary: #800020;
+    --primary-rgb: 128, 0, 32;
+    --border-rgb: 49, 50, 68;
 }
 
 /* Controls wrapper (lang + theme toggles, side by side) */
@@ -138,7 +132,7 @@ html[lang="zh"] a {
     left: 3px;
     width: calc(50% - 3px);
     height: calc(100% - 6px);
-    background: var(--accent);
+    background: var(--primary);
     border-radius: 17px;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -159,7 +153,7 @@ html {
     position: absolute;
     top: -100%;
     left: 0;
-    background: var(--accent);
+    background: var(--primary);
     color: #fff;
     padding: 1rem 2rem;
     z-index: 9999;
@@ -182,9 +176,9 @@ body {
     font-size: var(--font-size-small);
     font-family: var(--font-body);
     font-weight: 400;
-    color: var(--white-1);
+    color: var(--muted);
     line-height: var(--line-height-normal);
-    background: var(--black);
+    background: var(--bg);
     overflow-x: hidden;
 }
 
@@ -219,11 +213,11 @@ body {
 
 section {
     padding: var(--gutter-huge) 0;
-    border-bottom: var(--border-light);
+    border-bottom: 1px solid var(--border);
 }
 
 section:nth-of-type(even) {
-    background: var(--card-bg-alt);
+    background: var(--card-hover);
 }
 
 img {
@@ -241,7 +235,7 @@ h3 {
     font-family: var(--font-latin);
     font-weight: 400;
     line-height: var(--line-height-small);
-    color: var(--white);
+    color: var(--text);
 }
 
 .heading-primary {
@@ -266,7 +260,7 @@ h2::after {
     display: block;
     height: 2px;
     width: 10rem;
-    background: var(--accent);
+    background: var(--primary);
     margin: var(--gutter-small) 0;
 }
 
@@ -304,7 +298,7 @@ p {
 /* --------------------------------------- */
 
 a {
-    color: var(--white);
+    color: var(--text);
     font-weight: 400;
     font-family: var(--font-latin);
     transition: all .2s;
@@ -317,7 +311,7 @@ a {
 
 button:focus,
 a:focus {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--primary);
 }
 
 body:not(.user-is-tabbing) button:focus,
@@ -326,7 +320,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link:hover {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 .btn {
@@ -336,14 +330,19 @@ body:not(.user-is-tabbing) a:focus {
     min-height: 4.4rem;
     text-decoration: none;
     color: inherit;
-    border: 1px solid  var(--accent);
+    border: 1px solid  var(--primary);
     font-weight: 400;
     z-index: 0;
 }
 
 .btn:focus {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--primary);
     outline-offset: 2px;
+}
+
+.btn:hover,
+.btn:focus {
+    color: #fff;
 }
 
 .btn::after {
@@ -353,7 +352,7 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     left: 0;
     right: 100%;
-    background: var(--white);
+    background: var(--primary);
     height: 100%;
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
@@ -362,11 +361,12 @@ body:not(.user-is-tabbing) a:focus {
 .btn:hover::after,
 .btn:focus::after {
     right: 0;
-    background: var(--accent);
+    background: var(--primary);
 }
 
 .btn--accent {
-    background: var(--accent);
+    background: var(--primary);
+    color: #fff;
     transition: all 0.2s;
 }
 
@@ -377,6 +377,7 @@ body:not(.user-is-tabbing) a:focus {
 .btn--accent:hover,
 .btn--accent:focus {
     background: transparent;
+    color: var(--primary);
 }
 
 .link__text {
@@ -385,9 +386,14 @@ body:not(.user-is-tabbing) a:focus {
     padding: .6rem;
     color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid var(--accent);
+    border-bottom: 1px solid var(--primary);
     z-index: 0;
     transition: color 0.2s ease;
+}
+
+.link__text:hover,
+.link__text:focus {
+    color: #fff;
 }
 
 .link__text::after {
@@ -397,21 +403,21 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     left: 0;
     right: 100%;
-    background: var(--white);
+    background: var(--primary);
     height: 100%;
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
 }
 
 .link__text:focus {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
 
 .link__text:hover::after,
 .link__text:focus:after {
     right: 0;
-    background: var(--accent);
+    background: var(--primary);
 }
 
 .link__text span {
@@ -430,7 +436,7 @@ body:not(.user-is-tabbing) a:focus {
     align-items: center;
     height: 5.5rem;
     width: 5.5rem;
-    background-color: var(--accent);
+    background-color: var(--primary);
     border-radius: 50%;
     z-index: 10;
     visibility: hidden;
@@ -447,6 +453,13 @@ body:not(.user-is-tabbing) a:focus {
 
 .back-to-top__image {
     height: 70%;
+}
+
+/* --- Invert white SVGs for light bg (reset in dark theme) --- */
+.footer__social-image,
+.work__code,
+.back-to-top__image {
+    filter: invert(1);
 }
 
 @media(max-width: 900px) {
@@ -515,18 +528,18 @@ body:not(.user-is-tabbing) a:focus {
     right: 100%;
     display: inline-block;
     height: 1rem;
-    background: var(--white);
+    background: var(--primary);
     transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
 }
 
 .nav__link:hover {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 .nav__link:hover::after {
     right: 0;
     height: 2px;
-    background: var(--accent);
+    background: var(--primary);
 }
 
 /* --------------------------------------- */
@@ -565,6 +578,13 @@ body:not(.user-is-tabbing) a:focus {
     .header__text p {
         transform: scale(.8);
     }
+}
+
+/* --- Header text always light (dark image overlay) --- */
+.header .heading-primary,
+.header__text p,
+.header .nav__link {
+    color: #cdd6f4;
 }
 
 /* --------------------------------------- */
@@ -608,7 +628,7 @@ body:not(.user-is-tabbing) a:focus {
     width: 110%;
     height: 110%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(155, 69, 69, 0.25) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.25) 0%, transparent 70%);
     z-index: 0;
     pointer-events: none;
 }
@@ -620,26 +640,26 @@ body:not(.user-is-tabbing) a:focus {
     width: 100%;
     height: auto;
     border-radius: 50%;
-    border: 3px solid rgba(155, 69, 69, 0.35);
+    border: 3px solid rgba(var(--primary-rgb), 0.35);
     box-shadow:
-        0 0 40px rgba(155, 69, 69, 0.2),
-        0 8px 32px rgba(0, 0, 0, 0.5);
+        0 0 40px rgba(var(--primary-rgb), 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about__photo:hover {
-    border-color: var(--accent);
+    border-color: var(--primary);
     box-shadow:
-        0 0 56px rgba(155, 69, 69, 0.35),
-        0 12px 40px rgba(0, 0, 0, 0.55);
+        0 0 56px rgba(var(--primary-rgb), 0.35),
+        0 12px 40px rgba(0, 0, 0, 0.12);
 }
 
 /* Dark card wrapper for text block */
 .about__text-card {
-    background: var(--card-bg);
+    background: var(--card);
     border-radius: 12px;
     padding: var(--gutter-normal);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(var(--border-rgb), 0.15);
 }
 
 @media(min-width: 901px) {
@@ -657,14 +677,14 @@ body:not(.user-is-tabbing) a:focus {
 .about__highlight {
     margin: var(--gutter-small-1) 0;
     padding: 1.6rem 2.2rem;
-    border-left: 3px solid var(--emphasis);
-    background: rgba(181, 88, 72, 0.08);
+    border-left: 3px solid var(--primary);
+    background: rgba(var(--primary-rgb), 0.08);
     border-radius: 0 4px 4px 0;
 }
 
 .about__highlight p {
     margin: 0;
-    color: var(--white);
+    color: var(--text);
     font-weight: 500;
 }
 
@@ -692,7 +712,7 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: var(--card-bg);
+    background: var(--card);
 }
 
 .education__item {
@@ -711,13 +731,13 @@ body:not(.user-is-tabbing) a:focus {
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 50%;
-    background: var(--accent);
-    border: 2px solid var(--card-bg-alt);
+    background: var(--primary);
+    border: 2px solid var(--card-hover);
     z-index: 1;
 }
 
 .education__card {
-    background: var(--card-bg);
+    background: var(--card);
     border-radius: 8px;
     padding: var(--gutter-small) var(--gutter-normal);
     margin-left: var(--gutter-small);
@@ -727,33 +747,33 @@ body:not(.user-is-tabbing) a:focus {
 
 .education__card:hover {
     transform: translateX(6px);
-    border-color: rgba(155, 69, 69, 0.3);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(var(--primary-rgb), 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .education__range {
     font-size: var(--font-size-small);
-    color: var(--accent);
+    color: var(--primary);
     font-weight: 500;
     margin-bottom: 0.6rem;
 }
 
 .education__degree {
     font-size: var(--font-size-normal);
-    color: var(--white);
+    color: var(--text);
     font-weight: 600;
     margin-bottom: 0.4rem;
 }
 
 .education__school {
     font-size: var(--font-size-small);
-    color: var(--white-1);
+    color: var(--muted);
     margin-bottom: 0.4rem;
 }
 
 .education__gpa {
     font-size: var(--font-size-small);
-    color: var(--white-1);
+    color: var(--muted);
     opacity: 0.75;
 }
 
@@ -771,10 +791,10 @@ body:not(.user-is-tabbing) a:focus {
 .honors__list li {
     position: relative;
     padding: 1.2rem 1.6rem 1.2rem 2.8rem;
-    background: var(--card-bg);
+    background: var(--card);
     border-radius: 8px;
     font-size: var(--font-size-small);
-    color: var(--white-1);
+    color: var(--muted);
     line-height: 1.5;
     border: 1px solid transparent;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -782,8 +802,8 @@ body:not(.user-is-tabbing) a:focus {
 
 .honors__list li:hover {
     transform: translateY(-3px);
-    border-color: rgba(155, 69, 69, 0.25);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    border-color: rgba(var(--primary-rgb), 0.25);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .honors__list li::before {
@@ -794,7 +814,7 @@ body:not(.user-is-tabbing) a:focus {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--primary);
 }
 
 @media(max-width: 500px) {
@@ -816,7 +836,7 @@ body:not(.user-is-tabbing) a:focus {
 .pubs__item {
     display: flex;
     gap: var(--gutter-normal);
-    background: var(--card-bg);
+    background: var(--card);
     border-radius: 10px;
     padding: var(--gutter-normal);
     transition: border-color 0.3s, transform 0.2s;
@@ -824,7 +844,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .pubs__item:hover {
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(var(--border-rgb), 0.25);
     transform: translateX(4px);
 }
 
@@ -833,13 +853,13 @@ body:not(.user-is-tabbing) a:focus {
     width: 3.6rem;
     height: 3.6rem;
     border-radius: 50%;
-    background: var(--card-bg-alt);
+    background: var(--card-hover);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: var(--font-size-small);
     font-weight: 600;
-    color: var(--accent);
+    color: var(--primary);
     font-family: var(--font-latin);
 }
 
@@ -856,12 +876,12 @@ body:not(.user-is-tabbing) a:focus {
 
 .pubs__title a {
     text-decoration: none;
-    color: var(--white);
+    color: var(--text);
     transition: color 0.2s;
 }
 
 .pubs__title a:hover {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 .pubs__authors {
@@ -871,7 +891,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .pubs__authors strong {
     font-weight: 600;
-    color: var(--white);
+    color: var(--text);
 }
 
 .pubs__journal {
@@ -887,16 +907,16 @@ body:not(.user-is-tabbing) a:focus {
 
 .pubs__doi {
     font-size: 1.4rem;
-    color: var(--accent);
+    color: var(--primary);
     text-decoration: none;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--primary);
     padding: 0.2rem 1rem;
     border-radius: 4px;
     transition: background 0.2s, color 0.2s;
 }
 
 .pubs__doi:hover {
-    background: var(--accent);
+    background: var(--primary);
     color: #fff;
 }
 
@@ -909,18 +929,18 @@ body:not(.user-is-tabbing) a:focus {
 .orcid__link {
     display: inline-block;
     font-size: var(--font-size-small);
-    color: var(--white-1);
+    color: var(--muted);
     text-decoration: none;
     padding: 1rem 2.4rem;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid var(--border);
     border-radius: 8px;
     transition: border-color 0.2s, color 0.2s;
     font-family: var(--font-latin);
 }
 
 .orcid__link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--primary);
+    color: var(--primary);
 }
 
 /* --------------------------------------- */
@@ -932,7 +952,7 @@ body:not(.user-is-tabbing) a:focus {
     align-items: center;
     border-radius: 12px;
     padding: var(--gutter-normal);
-    background: var(--card-bg);
+    background: var(--card);
 }
 
 .work__box:not(:last-child) {
@@ -971,15 +991,15 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__badge--tool {
-    background: rgba(155, 69, 69, 0.15);
-    color: var(--accent);
-    border: 1px solid rgba(155, 69, 69, 0.3);
+    background: rgba(var(--primary-rgb), 0.15);
+    color: var(--primary);
+    border: 1px solid rgba(var(--primary-rgb), 0.3);
 }
 
 .work__badge--paper {
-    background: rgba(181, 88, 72, 0.12);
-    color: var(--emphasis);
-    border: 1px solid rgba(181, 88, 72, 0.3);
+    background: rgba(var(--primary-rgb), 0.12);
+    color: var(--primary);
+    border: 1px solid rgba(var(--primary-rgb), 0.3);
 }
 
 .work__links {
@@ -1016,13 +1036,13 @@ body:not(.user-is-tabbing) a:focus {
     height: auto;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .work__image:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(var(--border-rgb), 0.3);
 }
 
 .work__image--main {
@@ -1054,21 +1074,21 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__thumb.active {
     opacity: 1;
-▲   border-color: var(--accent);
+▲   border-color: var(--primary);
 }
 
 /* Featured note (e.g. USPEX official listing) */
 .work__featured-note {
     margin-top: var(--gutter-small);
     font-size: 1.5rem;
-    color: var(--white-1);
+    color: var(--muted);
     opacity: 0.85;
-    border-left: 2px solid var(--emphasis);
+    border-left: 2px solid var(--primary);
     padding-left: 1.2rem;
 }
 
 .work__featured-link {
-    color: var(--emphasis);
+    color: var(--primary);
     text-decoration: none;
     font-size: 1.4rem;
     font-weight: 500;
@@ -1080,14 +1100,14 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__featured-link:hover {
-    border-bottom-color: var(--emphasis);
+    border-bottom-color: var(--primary);
 }
 
 /* GIF showcase */
 .work__gif-label {
     margin: var(--gutter-small) 0 1.6rem;
     font-size: 1.5rem;
-    color: var(--white-1);
+    color: var(--muted);
     opacity: 0.6;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1121,8 +1141,8 @@ body:not(.user-is-tabbing) a:focus {
 .work__gif-card:hover,
 .work__gif-card:focus-visible {
     transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 0 2px var(--accent);
+    border-color: var(--primary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 0 0 2px var(--primary);
 }
 
 /* GIF image fills card */
@@ -1164,7 +1184,7 @@ body:not(.user-is-tabbing) a:focus {
 /* Expand icon in overlay */
 .work__gif-overlay__icon {
     flex-shrink: 0;
-    color: var(--accent);
+    color: var(--primary);
     opacity: 0;
     transform: translateY(4px);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1179,7 +1199,7 @@ body:not(.user-is-tabbing) a:focus {
 /* Caption text in overlay */
 .work__gif-overlay__caption {
     font-size: 1.3rem;
-    color: var(--white);
+    color: var(--text);
     font-weight: 500;
     font-family: var(--font-latin);
     line-height: 1.3;
@@ -1252,22 +1272,22 @@ body:not(.user-is-tabbing) a:focus {
     justify-content: center;
     width: 4.4rem;
     height: 4.4rem;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--primary);
     border-radius: 50%;
     background: transparent;
-    color: var(--white-1);
+    color: var(--muted);
     cursor: pointer;
     transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
 .btn-copy:hover {
-    background: var(--accent);
+    background: var(--primary);
     color: #fff;
     transform: scale(1.1);
 }
 
 .btn-copy:focus {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
 
@@ -1404,7 +1424,7 @@ body:not(.user-is-tabbing) a:focus {
     right: 2.5rem;
     background: none;
     border: none;
-    color: var(--white);
+    color: var(--text);
     font-size: 4rem;
     line-height: 1;
     cursor: pointer;
@@ -1413,7 +1433,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .lightbox__close:hover {
-    color: var(--accent);
+    color: var(--primary);
     transform: scale(1.15);
 }
 
@@ -1424,7 +1444,7 @@ body:not(.user-is-tabbing) a:focus {
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    color: var(--white);
+    color: var(--text);
     font-size: 5rem;
     line-height: 1;
     width: 5.5rem;
@@ -1439,13 +1459,13 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .lightbox__arrow:hover {
-    background: rgba(155, 69, 69, 0.3);
-    border-color: var(--accent);
+    background: rgba(var(--primary-rgb), 0.3);
+    border-color: var(--primary);
     transform: translateY(-50%) scale(1.08);
 }
 
 .lightbox__arrow:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
 
@@ -1471,7 +1491,7 @@ body:not(.user-is-tabbing) a:focus {
 .lightbox__caption {
     margin-top: 1.6rem;
     font-size: 1.6rem;
-    color: var(--white-1);
+    color: var(--muted);
     font-family: var(--font-latin);
     text-align: center;
     opacity: 0.85;
@@ -1498,152 +1518,50 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- Light Theme Overrides ----- */
+/* ----- Dark Theme Overrides ----- */
 /* --------------------------------------- */
 
-/* --- Header text stays light (bg image overlay is dark) --- */
-[data-theme="light"] .header .heading-primary,
-[data-theme="light"] .header__text p,
-[data-theme="light"] .header .nav__link {
-    color: #f0e9f2;
+/* --- SVG icons stay white (visible on dark bg) --- */
+[data-theme="dark"] .footer__social-image,
+[data-theme="dark"] .work__code,
+[data-theme="dark"] .back-to-top__image {
+    filter: none;
 }
 
-/* --- Even sections (deep navy bg) → light text --- */
-[data-theme="light"] section:nth-of-type(even) {
-    color: var(--card-text);
-}
-
-[data-theme="light"] section:nth-of-type(even) h2,
-[data-theme="light"] section:nth-of-type(even) h3,
-[data-theme="light"] section:nth-of-type(even) a {
-    color: var(--card-heading);
-}
-
-[data-theme="light"] section:nth-of-type(even) h2::after {
-    background: var(--accent);
-}
-
-/* --- Cards on light sections (muted navy bg) → light text --- */
-[data-theme="light"] .about__text-card,
-[data-theme="light"] .education__card,
-[data-theme="light"] .work__box {
-    color: var(--card-text);
-}
-
-[data-theme="light"] .education__degree,
-[data-theme="light"] .work__box h3 {
-    color: var(--card-heading);
-}
-
-[data-theme="light"] .education__school,
-[data-theme="light"] .education__gpa {
-    color: var(--card-text);
-    opacity: 0.85;
-}
-
-[data-theme="light"] .work__box a.link__text {
-    color: var(--card-heading);
-}
-
-/* --- PhD highlight box --- */
-[data-theme="light"] .about__highlight {
-    background: rgba(155, 69, 69, 0.12);
-}
-
-[data-theme="light"] .about__highlight p {
-    color: var(--card-heading);
-}
-
-/* --- Pubs list (inside even section = deep navy bg, cards = muted navy) --- */
-[data-theme="light"] .pubs__title a {
-    color: var(--card-heading);
-}
-
-[data-theme="light"] .pubs__title a:hover {
-    color: var(--accent);
-}
-
-[data-theme="light"] .pubs__index {
-    background: var(--card-bg-alt);
-    color: var(--accent);
-}
-
-[data-theme="light"] .pubs__item:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-}
-
-/* --- Badge colors (use burgundy / emphasis) --- */
-[data-theme="light"] .work__badge--tool {
-    background: rgba(155, 69, 69, 0.12);
-    border-color: rgba(155, 69, 69, 0.3);
-    color: var(--accent);
-}
-
-[data-theme="light"] .work__badge--paper {
-    background: rgba(139, 62, 62, 0.1);
-    border-color: rgba(139, 62, 62, 0.25);
-    color: var(--emphasis);
-}
-
-/* --- Work featured note --- */
-[data-theme="light"] .work__featured-note,
-[data-theme="light"] .work__gif-label {
-    color: var(--card-text);
-    opacity: 0.75;
-}
-
-/* --- Avatar glow → burgundy --- */
-[data-theme="light"] .about__photo-wrap::before {
-    background: radial-gradient(circle, rgba(155, 69, 69, 0.2) 0%, transparent 70%);
-}
-
-[data-theme="light"] .about__photo {
-    border-color: rgba(155, 69, 69, 0.3);
+/* --- Restore deeper shadows for dark background --- */
+[data-theme="dark"] .about__photo {
     box-shadow:
-        0 0 40px rgba(155, 69, 69, 0.12),
-        0 8px 32px rgba(0, 0, 0, 0.12);
+        0 0 40px rgba(var(--primary-rgb), 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
-[data-theme="light"] .about__photo:hover {
-    border-color: var(--accent);
+[data-theme="dark"] .about__photo:hover {
     box-shadow:
-        0 0 56px rgba(155, 69, 69, 0.25),
-        0 12px 40px rgba(0, 0, 0, 0.2);
+        0 0 56px rgba(var(--primary-rgb), 0.35),
+        0 12px 40px rgba(0, 0, 0, 0.55);
 }
 
-/* --- Hover overrides (adapt rgba to burgundy) --- */
-[data-theme="light"] .education__card:hover {
-    border-color: rgba(155, 69, 69, 0.4);
+[data-theme="dark"] .education__card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
-[data-theme="light"] .honors__list li {
-    color: var(--card-text);
+[data-theme="dark"] .honors__list li:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
 
-[data-theme="light"] .honors__list li:hover {
-    border-color: rgba(155, 69, 69, 0.35);
+[data-theme="dark"] .pubs__item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-[data-theme="light"] .lightbox__arrow:hover {
-    background: rgba(155, 69, 69, 0.2);
-    border-color: var(--accent);
+[data-theme="dark"] .work__image {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
 }
 
-/* --- GIF card hover focus ring --- */
-[data-theme="light"] .work__gif-card:hover,
-[data-theme="light"] .work__gif-card:focus-visible {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 0 2px var(--accent);
+[data-theme="dark"] .work__image:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-/* --- Education timeline vertical line --- */
-[data-theme="light"] .education__list::before {
-    background: var(--card-bg);
-}
-
-/* --- Invert monochrome SVGs for light bg --- */
-[data-theme="light"] .footer__social-image,
-[data-theme="light"] .work__code,
-[data-theme="light"] .back-to-top__image {
-    filter: invert(1);
+[data-theme="dark"] .work__gif-card:hover,
+[data-theme="dark"] .work__gif-card:focus-visible {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 0 2px var(--primary);
 }
