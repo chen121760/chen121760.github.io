@@ -777,6 +777,12 @@ body:not(.user-is-tabbing) a:focus {
     opacity: 0.75;
 }
 
+.education__advisor {
+    font-size: var(--font-size-small);
+    color: var(--muted);
+    opacity: 0.75;
+}
+
 /* --------------------------------------- */
 /* ----- Honors ----- */
 /* --------------------------------------- */
