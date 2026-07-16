@@ -783,6 +783,16 @@ body:not(.user-is-tabbing) a:focus {
     opacity: 0.75;
 }
 
+.education__advisor a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.education__advisor a:hover {
+    color: var(--accent);
+}
+
 /* --------------------------------------- */
 /* ----- Honors ----- */
 /* --------------------------------------- */
