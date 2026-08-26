@@ -14,6 +14,9 @@ const translations = {
     "about.research": "My research focuses on crystal structure prediction, machine learning-assisted materials design, and first-principles calculations. I am particularly interested in materials genome, machine learning interatomic potentials, and molecular dynamics.",
     "about.phd": "I am looking for a PhD position starting Fall 2027.",
     "about.resume": "My Resume",
+    "about.lang.title": "Language",
+    "about.lang.cet4": "CET-4",
+    "about.lang.cet6": "CET-6",
 
     /* Education */
     "education.title": "Education",
@@ -86,6 +89,9 @@ const translations = {
     "about.research": "研究方向为晶体结构预测、机器学习辅助材料设计与第一性原理计算。对材料基因、机器学习势函数和分子动力学方向特别感兴趣。",
     "about.phd": "计划2027年秋季开始攻读博士，正在寻找合适的课题组。",
     "about.resume": "我的简历",
+    "about.lang.title": "语言能力",
+    "about.lang.cet4": "英语四级",
+    "about.lang.cet6": "英语六级",
 
     /* Education */
     "education.title": "教育背景",

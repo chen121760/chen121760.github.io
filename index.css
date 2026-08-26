@@ -833,6 +833,35 @@ body:not(.user-is-tabbing) a:focus {
     background: var(--primary);
 }
 
+/* Language proficiency module inside About */
+.about__lang {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: var(--gutter-small-1) 0;
+}
+
+.about__lang-label {
+    font-size: var(--font-size-small);
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.about__lang-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.2rem;
+    background: rgba(var(--primary-rgb), 0.12);
+    color: var(--text);
+    border: 1px solid rgba(var(--primary-rgb), 0.3);
+    border-radius: 999px;
+    font-size: var(--font-size-small);
+    font-weight: 500;
+}
+
 @media(max-width: 500px) {
     .honors__list {
         grid-template-columns: 1fr;
