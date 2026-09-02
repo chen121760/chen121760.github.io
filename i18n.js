@@ -48,6 +48,8 @@ const translations = {
     "pubs.paper2.authors": "Liang Y*, <strong>Chen J*</strong>, Huang Y, et al.",
     "pubs.paper3.title": "Activating HfX₂ (X = S, Se and Te) for the hydrogen evolution reaction by introducing defects: a first-principles study",
     "pubs.paper3.authors": "<strong>Chen J*</strong>, Zhang R*, Luo J, et al.",
+    "pubs.paper4.title": "Crystal structure prediction of stable quaternary hydrides in the Cs–Li–Rh–H system",
+    "pubs.paper4.authors": "Chen R, Zhang S, <strong>Chen J</strong>, Liang Y, Peng J, Dong H",
 
     /* Work */
     "work.title": "Projects",
@@ -123,6 +125,8 @@ const translations = {
     "pubs.paper2.authors": "Liang Y*, <strong>Chen J*</strong>, Huang Y, et al.",
     "pubs.paper3.title": "Activating HfX₂ (X = S, Se and Te) for the hydrogen evolution reaction by introducing defects: a first-principles study",
     "pubs.paper3.authors": "<strong>Chen J*</strong>, Zhang R*, Luo J, et al.",
+    "pubs.paper4.title": "Crystal structure prediction of stable quaternary hydrides in the Cs–Li–Rh–H system",
+    "pubs.paper4.authors": "Chen R, Zhang S, <strong>Chen J</strong>, Liang Y, Peng J, Dong H",
 
     /* Work */
     "work.title": "项目",
