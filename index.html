@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="index.css?v=2" />
+  <link rel="stylesheet" href="index.css?v=3" />
   <script>
     (function() {
       var lang = localStorage.getItem('lang') || 'en';
@@ -410,6 +410,46 @@
             </div>
           </div>
 
+          <!-- Project 3: SISSO-Analyzer (tool card, image + thumbnail showcase) -->
+          <div class="work__box work__box--tool reveal">
+            <div class="work__text">
+              <div class="work__badge work__badge--tool" data-i18n="work.badge.tool">Tool</div>
+              <h3 data-i18n="work.project3.title">SISSO-Analyzer</h3>
+              <p data-i18n="work.project3.desc">
+                An interactive, browser-based platform for batch analysis and visualization of SISSO
+                symbolic-regression candidate models. Every model can be re-evaluated on an independent
+                validation set, with training and validation performance compared side by side. It helps
+                you weigh predictive accuracy, generalization, and interpretability together when
+                selecting final descriptors.
+              </p>
+              <ul class="work__list">
+                <li>SISSO</li>
+                <li>Symbolic Regression</li>
+                <li>Interpretable ML</li>
+                <li>Scientific Software</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://chen121760.github.io/SISSO-Analyzer/" target="_blank" class="link__text">
+                  <span data-i18n="work.project3.link">Live Demo</span> <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/chen121760/SISSO-Analyzer" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/demo-SISSO-Analyzer4.png" class="work__image work__image--main" id="project3-main" alt="SISSO-Analyzer feature demo" loading="lazy" />
+              <div class="work__thumbs">
+                <img src="./images/demo-SISSO-Analyzer1.png" class="work__thumb" data-main="#project3-main" alt="SISSO-Analyzer demo 1" loading="lazy" />
+                <img src="./images/demo-SISSO-Analyzer2.png" class="work__thumb" data-main="#project3-main" alt="SISSO-Analyzer demo 2" loading="lazy" />
+                <img src="./images/demo-SISSO-Analyzer3.png" class="work__thumb" data-main="#project3-main" alt="SISSO-Analyzer demo 3" loading="lazy" />
+                <img src="./images/demo-SISSO-Analyzer4.png" class="work__thumb active" data-main="#project3-main" alt="SISSO-Analyzer demo 4" loading="lazy" />
+                <img src="./images/demo-SISSO-Analyzer5.png" class="work__thumb" data-main="#project3-main" alt="SISSO-Analyzer demo 5" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -485,8 +525,8 @@
   <a href="#top" class="back-to-top" title="Back to Top">
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
   </a>
-  <script src="./i18n.js?v=2" defer></script>
-  <script src="./index.js?v=2" defer></script>
+  <script src="./i18n.js?v=3" defer></script>
+  <script src="./index.js?v=3" defer></script>
 </body>
 
 </html>

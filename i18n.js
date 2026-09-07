@@ -70,6 +70,9 @@ const translations = {
     "work.project2.featured": "Listed on the USPEX official website as a recommended community tool.",
     "work.project2.featured.link": "USPEX Tools \u2192",
     "work.project2.link": "Visit Site",
+    "work.project3.title": "SISSO-Analyzer",
+    "work.project3.desc": "An interactive, browser-based platform for batch analysis and visualization of SISSO symbolic-regression candidate models. Every model can be re-evaluated on an independent validation set, with training and validation performance compared side by side. It helps you weigh predictive accuracy, generalization, and interpretability together when selecting final descriptors.",
+    "work.project3.link": "Live Demo",
 
     /* Contact */
     "contact.title": "Get in Touch",
@@ -147,6 +150,9 @@ const translations = {
     "work.project2.featured": "该工具已被 USPEX 官方网站收录为社区推荐工具。",
     "work.project2.featured.link": "USPEX 官方工具 \u2192",
     "work.project2.link": "访问网站",
+    "work.project3.title": "SISSO-Analyzer",
+    "work.project3.desc": "面向 SISSO 符号回归候选模型的交互式批量分析与可视化平台。可对所有候选模型在独立验证集上重新评估，并排对比训练集与验证集性能，帮助你在筛选最终描述符时综合权衡预测精度、泛化能力与可解释性。",
+    "work.project3.link": "在线演示",
 
     /* Contact */
     "contact.title": "联系方式",
