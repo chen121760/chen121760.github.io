@@ -72,7 +72,9 @@ const translations = {
     "work.project2.featured.link": "USPEX Tools \u2192",
     "work.project2.link": "Visit Site",
     "work.project3.title": "SISSO-Analyzer",
-    "work.project3.desc": "An interactive, browser-based platform for batch analysis and visualization of SISSO symbolic-regression candidate models. Every model can be re-evaluated on an independent validation set, with training and validation performance compared side by side. It helps you weigh predictive accuracy, generalization, and interpretability together when selecting final descriptors.",
+    "work.project3.desc": "A browser-based tool for validating, comparing, and visualizing SISSO candidate models, including holdout metrics, Pareto fronts, and per-model diagnostics.",
+    "work.project3.companion": "AI-assisted companion: SISSO-Sage reviews predictive evidence, feature metadata, and extraction code to identify several scientifically defensible candidate formulas.",
+    "work.project3.sage": "SISSO-Sage \u2192",
     "work.project3.link": "Live Demo",
 
     /* Contact */
@@ -153,7 +155,9 @@ const translations = {
     "work.project2.featured.link": "USPEX 官方工具 \u2192",
     "work.project2.link": "访问网站",
     "work.project3.title": "SISSO-Analyzer",
-    "work.project3.desc": "面向 SISSO 符号回归候选模型的交互式批量分析与可视化平台。可对所有候选模型在独立验证集上重新评估，并排对比训练集与验证集性能，帮助你在筛选最终描述符时综合权衡预测精度、泛化能力与可解释性。",
+    "work.project3.desc": "基于浏览器的 SISSO 候选模型验证、比较与可视化工具，支持留出集指标、Pareto 前沿和单模型诊断。",
+    "work.project3.companion": "AI 配套工具：SISSO-Sage 可结合预测证据、特征元数据和提取源码，审查并给出多条具有科学依据的候选公式。",
+    "work.project3.sage": "SISSO-Sage \u2192",
     "work.project3.link": "在线演示",
 
     /* Contact */

@@ -9,6 +9,7 @@ My personal academic portfolio website.
 - [Hydride Tc Predictor](https://chen121760.github.io/web-of-Hydride-Tc-Predictor/) - Interpretable prediction of hydrogen-based superconductors
 - [USPEX Analyzer](https://chen121760.github.io/USPEX-Analyzer/) - Browser-based post-processing platform for USPEX 10.5
 - [SISSO-Analyzer](https://chen121760.github.io/SISSO-Analyzer/) - Interactive analysis and validation platform for SISSO symbolic-regression models
+- [SISSO-Sage](https://github.com/chen121760/SISSO-Sage) - AI-assisted evidence review and candidate selection for SISSO models
 
 ## License
 
