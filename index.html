@@ -23,6 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="index.css?v=4" />
+  <link rel="stylesheet" href="project-media.css?v=20261020" />
   <script>
     (function() {
       var lang = localStorage.getItem('lang') || 'en';
@@ -320,16 +321,17 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/project-1a.png" class="work__image work__image--main" id="project1-main" alt="Hydride Tc Predictor" loading="lazy" />
+              <img src="./images/project-1b.png" class="work__image work__image--main" id="project1-main" alt="Predicted versus calculated superconducting critical temperatures" loading="lazy" />
+              <p class="project-media__meta" data-media-en="Prediction and validation" data-media-zh="预测与验证">Prediction and validation</p>
               <div class="work__thumbs">
-                <img src="./images/project-1a.png" class="work__thumb active" data-main="#project1-main" loading="lazy" />
-                <img src="./images/project-1b.png" class="work__thumb" data-main="#project1-main" loading="lazy" />
+                <img src="./images/project-1a.png" class="work__thumb" data-main="#project1-main" loading="lazy" />
+                <img src="./images/project-1b.png" class="work__thumb active" data-main="#project1-main" loading="lazy" />
               </div>
             </div>
           </div>
 
-          <!-- Project 2: USPEX Analyzer (tool card with GIF showcase) -->
-          <div class="work__box work__box--tool reveal">
+          <!-- Project 2: USPEX Analyzer (tool card with video overview) -->
+          <div class="work__box work__box--tool reveal" id="uspex-analyzer-project">
             <div class="work__text">
               <div class="work__badge work__badge--tool" data-i18n="work.badge.tool">Tool</div>
               <h3 data-i18n="work.project2.title">USPEX Analyzer</h3>
@@ -359,66 +361,34 @@
                 </a>
               </div>
             </div>
-            <div class="work__image-box">
-              <!-- GIF showcase row -->
-              <p class="work__gif-label" data-i18n="work.giflabel">Feature Demos</p>
-              <div class="work__gif-row">
-                <div class="work__gif-item reveal">
-                  <div class="work__gif-card" tabindex="0">
-                    <img src="./images/demo-scatter.gif" class="work__gif" alt="Scatter Plot — Data Exploration" loading="lazy"
-                         data-i18n-alt-en="Scatter Plot — Data Exploration" data-i18n-alt-zh="散点图 — 数据探索" />
-                    <div class="work__gif-overlay">
-                      <svg class="work__gif-overlay__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                      <span class="work__gif-overlay__caption" data-i18n="work.gif.scatter">Data Exploration</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work__gif-item reveal">
-                  <div class="work__gif-card" tabindex="0">
-                    <img src="./images/demo-table.gif" class="work__gif" alt="Table & Genealogy" loading="lazy"
-                         data-i18n-alt-en="Table & Genealogy" data-i18n-alt-zh="数据表格与族谱" />
-                    <div class="work__gif-overlay">
-                      <svg class="work__gif-overlay__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                      <span class="work__gif-overlay__caption" data-i18n="work.gif.table">Table & Genealogy</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work__gif-item reveal">
-                  <div class="work__gif-card" tabindex="0">
-                    <img src="./images/demo-HullWorkshop.gif" class="work__gif" alt="Convex Hull Workshop" loading="lazy"
-                         data-i18n-alt-en="Convex Hull Workshop" data-i18n-alt-zh="凸包工作台" />
-                    <div class="work__gif-overlay">
-                      <svg class="work__gif-overlay__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                      <span class="work__gif-overlay__caption" data-i18n="work.gif.hull">Hull Workshop</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work__gif-item reveal">
-                  <div class="work__gif-card" tabindex="0">
-                    <img src="./images/demo-filter.gif" class="work__gif" alt="Filter & Export" loading="lazy"
-                         data-i18n-alt-en="Filter & Export" data-i18n-alt-zh="筛选与导出" />
-                    <div class="work__gif-overlay">
-                      <svg class="work__gif-overlay__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                      <span class="work__gif-overlay__caption" data-i18n="work.gif.filter">Filter & Export</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work__gif-item reveal">
-                  <div class="work__gif-card" tabindex="0">
-                    <img src="./images/demo-Hypervolume.gif" class="work__gif" alt="Hypervolume" loading="lazy"
-                         data-i18n-alt-en="Hypervolume" data-i18n-alt-zh="Hypervolume" />
-                    <div class="work__gif-overlay">
-                      <svg class="work__gif-overlay__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                      <span class="work__gif-overlay__caption" data-i18n="work.gif.hypervolume">Hypervolume</span>
-                    </div>
-                  </div>
-                </div>
+            <div class="work__image-box work__image-box--media">
+              <a class="project-video" href="https://chen121760.github.io/USPEX-Analyzer/promo/" data-video-trigger data-video-title="USPEX Analyzer"
+                 data-video="https://chen121760.github.io/USPEX-Analyzer/promo/uspex-analyzer-promo-en.mp4?v=f1557dfe" data-captions="./media/uspex-overview.vtt"
+                 aria-haspopup="dialog" aria-controls="project-video-dialog" aria-label="Watch USPEX Analyzer overview, 60 seconds"
+                 data-media-aria-en="Watch USPEX Analyzer overview, 60 seconds" data-media-aria-zh="观看 USPEX Analyzer 宣传片，60 秒">
+                <img src="./images/uspex-overview.webp" alt="USPEX Analyzer overview" width="1920" height="1080" loading="lazy" decoding="async">
+                <span class="project-video__action"><span class="project-video__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l14-8z"/></svg></span><span data-media-en="Watch overview · 60 sec" data-media-zh="观看宣传片 · 60 秒">Watch overview · 60 sec</span></span>
+              </a>
+              <p class="project-media__meta" data-media-en="English narration · 1080p" data-media-zh="英文配音 · 1080p">English narration · 1080p</p>
+              <div class="project-gallery">
+                <a class="work__gif-card" href="./images/uspex-structure.webp" aria-label="Structure viewer" data-media-aria-en="Enlarge: Structure viewer" data-media-aria-zh="放大查看：结构查看">
+                  <img src="./images/uspex-structure.webp" class="work__gif" alt="Structure viewer" loading="lazy" decoding="async">
+                  <span class="work__gif-overlay"><span class="work__gif-overlay__caption" data-media-en="Structure viewer" data-media-zh="结构查看">Structure viewer</span></span>
+                </a>
+                <a class="work__gif-card" href="./images/uspex-hull.webp" aria-label="Convex hull" data-media-aria-en="Enlarge: Convex hull" data-media-aria-zh="放大查看：凸包分析">
+                  <img src="./images/uspex-hull.webp" class="work__gif" alt="Convex hull" loading="lazy" decoding="async">
+                  <span class="work__gif-overlay"><span class="work__gif-overlay__caption" data-media-en="Convex hull" data-media-zh="凸包分析">Convex hull</span></span>
+                </a>
+                <a class="work__gif-card" href="./images/uspex-export.webp" aria-label="Filter & export" data-media-aria-en="Enlarge: Filter & export" data-media-aria-zh="放大查看：筛选导出">
+                  <img src="./images/uspex-export.webp" class="work__gif" alt="Filter & export" loading="lazy" decoding="async">
+                  <span class="work__gif-overlay"><span class="work__gif-overlay__caption" data-media-en="Filter & export" data-media-zh="筛选导出">Filter & export</span></span>
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- Project 3: SISSO-Analyzer (tool card, image + thumbnail showcase) -->
-          <div class="work__box work__box--tool reveal">
+          <!-- Project 3: SISSO-Analyzer (tool card with video overview) -->
+          <div class="work__box work__box--tool reveal" id="sisso-analyzer-project">
             <div class="work__text">
               <div class="work__badge work__badge--tool" data-i18n="work.badge.tool">Tool</div>
               <h3 data-i18n="work.project3.title">SISSO-Analyzer</h3>
@@ -446,14 +416,28 @@
                 </a>
               </div>
             </div>
-            <div class="work__image-box">
-              <img src="./images/demo-SISSO-Analyzer4.png" class="work__image work__image--main" id="project3-main" alt="SISSO-Analyzer feature demo" loading="lazy" />
-              <div class="work__thumbs">
-                <img src="./images/demo-SISSO-Analyzer1.png" class="work__thumb" data-main="#project3-main" alt="SISSO-Analyzer demo 1" loading="lazy" />
-                <img src="./images/demo-SISSO-Analyzer2.png" class="work__thumb" data-main="#project3-main" alt="SISSO-Analyzer demo 2" loading="lazy" />
-                <img src="./images/demo-SISSO-Analyzer3.png" class="work__thumb" data-main="#project3-main" alt="SISSO-Analyzer demo 3" loading="lazy" />
-                <img src="./images/demo-SISSO-Analyzer4.png" class="work__thumb active" data-main="#project3-main" alt="SISSO-Analyzer demo 4" loading="lazy" />
-                <img src="./images/demo-SISSO-Analyzer5.png" class="work__thumb" data-main="#project3-main" alt="SISSO-Analyzer demo 5" loading="lazy" />
+            <div class="work__image-box work__image-box--media">
+              <a class="project-video" href="https://chen121760.github.io/SISSO-Analyzer/promo/" data-video-trigger data-video-title="SISSO-Analyzer × SISSO-Sage"
+                 data-video="https://chen121760.github.io/SISSO-Analyzer/promo/sisso-promo-en.mp4?v=d81b46b8" data-captions="./media/sisso-overview.vtt"
+                 aria-haspopup="dialog" aria-controls="project-video-dialog" aria-label="Watch SISSO-Analyzer × SISSO-Sage overview, 48 seconds"
+                 data-media-aria-en="Watch SISSO-Analyzer × SISSO-Sage overview, 48 seconds" data-media-aria-zh="观看 SISSO-Analyzer × SISSO-Sage 宣传片，48 秒">
+                <img src="./images/sisso-overview.webp" alt="SISSO-Analyzer × SISSO-Sage overview" width="1920" height="1080" loading="lazy" decoding="async">
+                <span class="project-video__action"><span class="project-video__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l14-8z"/></svg></span><span data-media-en="Watch overview · 48 sec" data-media-zh="观看宣传片 · 48 秒">Watch overview · 48 sec</span></span>
+              </a>
+              <p class="project-media__meta" data-media-en="English narration · 1080p" data-media-zh="英文配音 · 1080p">English narration · 1080p</p>
+              <div class="project-gallery">
+                <a class="work__gif-card" href="./images/demo-SISSO-Analyzer2.png" aria-label="Model comparison" data-media-aria-en="Enlarge: Model comparison" data-media-aria-zh="放大查看：模型对比">
+                  <img src="./images/demo-SISSO-Analyzer2.png" class="work__gif" alt="Model comparison" loading="lazy" decoding="async">
+                  <span class="work__gif-overlay"><span class="work__gif-overlay__caption" data-media-en="Model comparison" data-media-zh="模型对比">Model comparison</span></span>
+                </a>
+                <a class="work__gif-card" href="./images/demo-SISSO-Analyzer4.png" aria-label="Pareto front" data-media-aria-en="Enlarge: Pareto front" data-media-aria-zh="放大查看：Pareto 前沿">
+                  <img src="./images/demo-SISSO-Analyzer4.png" class="work__gif" alt="Pareto front" loading="lazy" decoding="async">
+                  <span class="work__gif-overlay"><span class="work__gif-overlay__caption" data-media-en="Pareto front" data-media-zh="Pareto 前沿">Pareto front</span></span>
+                </a>
+                <a class="work__gif-card" href="./images/demo-SISSO-Analyzer3.png" aria-label="Model diagnostics" data-media-aria-en="Enlarge: Model diagnostics" data-media-aria-zh="放大查看：模型诊断">
+                  <img src="./images/demo-SISSO-Analyzer3.png" class="work__gif" alt="Model diagnostics" loading="lazy" decoding="async">
+                  <span class="work__gif-overlay"><span class="work__gif-overlay__caption" data-media-en="Model diagnostics" data-media-zh="模型诊断">Model diagnostics</span></span>
+                </a>
               </div>
             </div>
           </div>
@@ -519,7 +503,16 @@
 
   </main>
 
-  <!-- GIF Lightbox -->
+  <dialog class="project-video-dialog" id="project-video-dialog" aria-labelledby="project-video-title">
+    <div class="project-video-dialog__header">
+      <h2 id="project-video-title">Project overview</h2>
+      <button class="project-video-dialog__close" id="project-video-close" type="button" aria-label="Close video" autofocus>×</button>
+    </div>
+    <video id="project-video-player" controls playsinline preload="none" width="1920" height="1080"></video>
+    <p class="project-video-dialog__footer"><a id="project-video-fallback" href="https://chen121760.github.io/USPEX-Analyzer/promo/" target="_blank" rel="noopener noreferrer" data-media-en="Open the dedicated video page" data-media-zh="打开独立视频页面">Open the dedicated video page</a></p>
+  </dialog>
+
+  <!-- Image Lightbox -->
   <div class="lightbox" id="gif-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lightbox__close" id="lightbox-close" aria-label="Close">&times;</button>
     <button class="lightbox__arrow lightbox__arrow--prev" id="lightbox-prev" aria-label="Previous">&lsaquo;</button>
@@ -535,6 +528,7 @@
   </a>
   <script src="./i18n.js?v=5" defer></script>
   <script src="./index.js?v=4" defer></script>
+  <script src="./project-media.js?v=20261020" defer></script>
 </body>
 
 </html>
