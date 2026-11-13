@@ -32,7 +32,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 // Scroll reveal animations
 const revealElements = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
+const revealObserver = window.IntersectionObserver && new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('revealed');
@@ -41,7 +41,7 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 
-revealElements.forEach(el => revealObserver.observe(el));
+revealElements.forEach(el => revealObserver ? revealObserver.observe(el) : el.classList.add('revealed'));
 
 // GIF lightbox with prev/next navigation
 const lightbox = document.getElementById('gif-lightbox');
@@ -71,90 +71,110 @@ function collectGifItems() {
 collectGifItems();
 
 let currentIndex = 0;
+let lightboxTrigger;
+const galleryCards = document.querySelectorAll('.work__gif-card');
+let lightboxAnimation;
 
-function openLightboxAt(index) {
-  currentIndex = index;
-  const item = gifItems[index];
-  if (!item) return;
+// Motion Prompt #162 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/#162
+function animateLightbox(closing) {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return null;
+  const source = (galleryCards[currentIndex] || lightboxTrigger).getBoundingClientRect();
+  const image = lightboxImg.getBoundingClientRect();
+  if (!image.width || !image.height || !source.width || !source.height) return null;
+
+  const thumbnail = {
+    transform: `translate(${source.left - image.left}px, ${source.top - image.top}px)
+      scale(${source.width / image.width}, ${source.height / image.height})`
+  };
+  const full = { transform: 'none' };
+  const timing = {
+    duration: closing ? 350 : 450,
+    easing: closing ? 'cubic-bezier(.645,.045,.355,1)' : 'cubic-bezier(.215,.61,.355,1)',
+    fill: 'both'
+  };
+  lightbox.animate([{ opacity: 0 }, { opacity: 1 }], {
+    ...timing, direction: closing ? 'reverse' : 'normal', pseudoElement: '::backdrop'
+  });
+  return lightboxImg.animate(closing ? [full, thumbnail] : [thumbnail, full], timing);
+}
+
+function closeLightbox() {
+  if (lightbox.dataset.closing) return;
+  lightboxAnimation?.cancel();
+  const animation = animateLightbox(true);
+  if (!animation) {
+    lightbox.close();
+    return;
+  }
+  lightbox.dataset.closing = 'true';
+  animation.finished.then(() => lightbox.close(), () => lightbox.close());
+}
+
+function showLightbox(item, trigger) {
   lightboxImg.src = item.src;
   lightboxImg.alt = item.alt;
   lightboxCaption.textContent = item.caption;
-  lightbox.classList.add('open');
-  document.body.style.overflow = 'hidden';
+  if (lightbox.open) return;
+  lightboxTrigger = trigger;
+  lightboxPrev.hidden = lightboxNext.hidden = currentIndex < 0;
+  lightbox.showModal();
+  lightboxAnimation = animateLightbox(false);
 }
 
-function lightboxNextImage() {
-  if (gifItems.length === 0) return;
-  openLightboxAt((currentIndex + 1) % gifItems.length);
+function stepLightbox(direction) {
+  if (currentIndex < 0) return;
+  currentIndex = (currentIndex + direction + gifItems.length) % gifItems.length;
+  showLightbox(gifItems[currentIndex]);
 }
 
-function lightboxPrevImage() {
-  if (gifItems.length === 0) return;
-  openLightboxAt((currentIndex - 1 + gifItems.length) % gifItems.length);
-}
-
-// Click / keyboard on a GIF card opens lightbox at that index
-document.querySelectorAll('.work__gif-card').forEach((card, i) => {
-  card.addEventListener('click', (e) => {
-    e.stopPropagation();
-    collectGifItems(); // refresh in case i18n changed captions
-    openLightboxAt(i);
-  });
-  card.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      e.stopPropagation();
-      collectGifItems();
-      openLightboxAt(i);
-    }
+galleryCards.forEach((card, index) => {
+  card.addEventListener('click', event => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    collectGifItems();
+    currentIndex = index;
+    showLightbox(gifItems[index], card);
   });
 });
 
-// Open lightbox on main project image click
-document.querySelectorAll('.work__image--main').forEach(img => {
-  img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightboxCaption.textContent = '';
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  });
+const mainImage = document.getElementById('project1-main');
+const imageTrigger = mainImage.closest('button');
+imageTrigger.addEventListener('click', () => {
+  currentIndex = -1;
+  showLightbox({ src: mainImage.src, alt: mainImage.alt, caption: '' }, imageTrigger);
 });
 
-// Thumbnail switcher
 document.querySelectorAll('.work__thumb').forEach(thumb => {
   thumb.addEventListener('click', () => {
-    const main = document.querySelector(thumb.dataset.main);
-    if (main) {
-      main.src = thumb.src;
-      thumb.parentElement.querySelectorAll('.work__thumb').forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
-    }
+    const image = thumb.querySelector('img');
+    mainImage.src = image.src;
+    mainImage.alt = image.alt;
+    thumb.parentElement.querySelectorAll('.work__thumb').forEach(button => {
+      button.classList.toggle('active', button === thumb);
+      button.setAttribute('aria-pressed', String(button === thumb));
+    });
   });
 });
 
-function closeLightbox() {
-  lightbox.classList.remove('open');
-  document.body.style.overflow = '';
-  lightboxImg.src = '';
-  lightboxCaption.textContent = '';
-}
-
 lightboxClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', closeLightbox);
-lightboxImg.addEventListener('click', (e) => e.stopPropagation());
-lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); lightboxPrevImage(); });
-lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); lightboxNextImage(); });
-
-document.addEventListener('keydown', (e) => {
-  if (!lightbox.classList.contains('open')) return;
-  if (e.key === 'Escape') {
-    closeLightbox();
-  } else if (e.key === 'ArrowRight') {
-    lightboxNextImage();
-  } else if (e.key === 'ArrowLeft') {
-    lightboxPrevImage();
-  }
+lightbox.addEventListener('cancel', event => {
+  event.preventDefault();
+  closeLightbox();
+});
+lightbox.addEventListener('click', event => {
+  if (event.target === lightbox) closeLightbox();
+});
+lightbox.addEventListener('close', () => {
+  delete lightbox.dataset.closing;
+  lightbox.getAnimations({ subtree: true }).forEach(animation => animation.cancel());
+  lightboxImg.removeAttribute('src');
+  lightboxTrigger?.focus({ preventScroll: true });
+});
+lightboxPrev.addEventListener('click', () => stepLightbox(-1));
+lightboxNext.addEventListener('click', () => stepLightbox(1));
+lightbox.addEventListener('keydown', event => {
+  if (event.key === 'ArrowRight') stepLightbox(1);
+  if (event.key === 'ArrowLeft') stepLightbox(-1);
 });
 
 // Theme toggle
@@ -164,6 +184,7 @@ document.addEventListener('keydown', (e) => {
 
   function setThemeUI(theme) {
     themeSwitch.classList.toggle('light', theme === 'light');
+    themeSwitch.setAttribute('aria-pressed', String(theme === 'dark'));
     themeSwitch.querySelectorAll('.theme-switch__option').forEach(opt => {
       opt.classList.toggle('active', opt.dataset.theme === theme);
     });
@@ -173,11 +194,14 @@ document.addEventListener('keydown', (e) => {
   setThemeUI(html.getAttribute('data-theme') || 'light');
 
   themeSwitch.addEventListener('click', () => {
+    if (themeChanging) return;
     const current = html.getAttribute('data-theme') || 'light';
     const next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-    setThemeUI(next);
+    changeTheme(next, () => {
+      html.setAttribute('data-theme', next);
+      setThemeUI(next);
+      localStorage.setItem('theme', next);
+    });
   });
 })();
 

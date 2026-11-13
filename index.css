@@ -340,44 +340,24 @@ body:not(.user-is-tabbing) a:focus {
     outline-offset: 2px;
 }
 
-.btn:hover,
-.btn:focus {
-    color: #fff;
+.btn {
+    border-radius: 1.2rem;
+    transition: background-color .22s ease, color .22s ease, box-shadow .22s ease, scale .18s ease;
 }
 
-.btn::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 100%;
-    background: var(--primary);
-    height: 100%;
-    z-index: -1;
-    transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
-}
-
-.btn:hover::after,
-.btn:focus::after {
-    right: 0;
-    background: var(--primary);
+.btn:hover {
+    background: rgba(var(--primary-rgb), .12);
 }
 
 .btn--accent {
     background: var(--primary);
     color: #fff;
-    transition: all 0.2s;
+    border-radius: 999px;
 }
 
-.btn--accent::after {
-    display: none;
-}
-
-.btn--accent:hover,
-.btn--accent:focus {
-    background: transparent;
-    color: var(--primary);
+.btn--accent:hover {
+    background: var(--primary);
+    box-shadow: 0 6px 22px rgba(var(--primary-rgb), .35);
 }
 
 .link__text {
@@ -392,37 +372,13 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link__text:hover,
-.link__text:focus {
-    color: #fff;
+.link__text:focus-visible {
+    color: var(--text);
+    background: rgba(var(--primary-rgb), .1);
 }
 
-.link__text::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 100%;
-    background: var(--primary);
-    height: 100%;
-    z-index: -1;
-    transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
-}
-
-.link__text:focus {
-    outline: 2px solid var(--primary);
-    outline-offset: 2px;
-}
-
-.link__text:hover::after,
-.link__text:focus:after {
-    right: 0;
-    background: var(--primary);
-}
-
-.link__text span {
-    padding-left: 1rem;
-    font-family: sans-serif;
+.link__text > span:last-child {
+    margin-inline-start: .45em;
 }
 
 /* ----- Back to Top ----- */
@@ -520,27 +476,7 @@ body:not(.user-is-tabbing) a:focus {
     transition: all .2s;
 }
 
-.nav__link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 100%;
-    display: inline-block;
-    height: 1rem;
-    background: var(--primary);
-    transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
-}
 
-.nav__link:hover {
-    color: var(--primary);
-}
-
-.nav__link:hover::after {
-    right: 0;
-    height: 2px;
-    background: var(--primary);
-}
 
 /* --------------------------------------- */
 /* ----- Header ----- */
@@ -1064,12 +1000,10 @@ body:not(.user-is-tabbing) a:focus {
 .work__code {
     display: block;
     height: 3rem;
-    margin-left: var(--gutter-normal);
-    transition: all .3s;
 }
 
-.work__code:hover {
-    transform: scale(1.2);
+.work__links > .magnetic-anchor {
+    margin-inline-start: var(--gutter-normal);
 }
 
 .work__image-box {
@@ -1119,7 +1053,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__thumb.active {
     opacity: 1;
-▲   border-color: var(--primary);
+    border-color: var(--primary);
 }
 
 /* Featured note (e.g. USPEX official listing) */
@@ -1328,7 +1262,6 @@ body:not(.user-is-tabbing) a:focus {
 .btn-copy:hover {
     background: var(--primary);
     color: #fff;
-    transform: scale(1.1);
 }
 
 .btn-copy:focus {
@@ -1380,10 +1313,6 @@ body:not(.user-is-tabbing) a:focus {
 .footer__social-image {
     height: 4rem;
     transition: transform 0.2s ease;
-}
-
-.footer__social-image:hover {
-    transform: scale(1.15);
 }
 
 @media(max-width: 500px) {
@@ -1440,9 +1369,14 @@ body:not(.user-is-tabbing) a:focus {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.92);
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
     z-index: 9999;
     justify-content: center;
     align-items: center;
@@ -1451,7 +1385,7 @@ body:not(.user-is-tabbing) a:focus {
     -webkit-backdrop-filter: blur(4px);
 }
 
-.lightbox.open {
+.lightbox[open] {
     display: flex;
 }
 
@@ -1479,7 +1413,6 @@ body:not(.user-is-tabbing) a:focus {
 
 .lightbox__close:hover {
     color: var(--primary);
-    transform: scale(1.15);
 }
 
 /* Prev / Next arrows */
@@ -1506,7 +1439,7 @@ body:not(.user-is-tabbing) a:focus {
 .lightbox__arrow:hover {
     background: rgba(var(--primary-rgb), 0.3);
     border-color: var(--primary);
-    transform: translateY(-50%) scale(1.08);
+    transform: translateY(-50%);
 }
 
 .lightbox__arrow:focus-visible {

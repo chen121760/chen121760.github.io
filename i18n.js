@@ -5,14 +5,14 @@ const translations = {
     "nav.work": "Projects",
     "nav.contact": "Contact",
     "header.name": "Jiawei Chen",
-    "header.tagline": "Crystal Structure Prediction<br>Machine Learning<br>First-Principles Calculations",
+    "header.tagline": "<span class='hero-mask'><span><mark class='research-highlight hero-highlight'>Crystal Structure Prediction</mark></span></span><span class='hero-mask'><span><mark class='research-highlight hero-highlight'>Machine Learning</mark></span></span><span class='hero-mask'><span><mark class='research-highlight hero-highlight'>First-Principles Calculations</mark></span></span>",
     "header.cta": "Get in touch",
 
     /* About */
     "about.title": "About Me",
     "about.identity": "I am a M.S. candidate in Materials Physics and Chemistry at Guangdong University of Technology, expected to graduate in June 2027.",
     "about.research": "My research focuses on crystal structure prediction, machine learning-assisted materials design, and first-principles calculations. I am particularly interested in materials genome, machine learning interatomic potentials, and molecular dynamics.",
-    "about.current": "I am currently working on (1) embedding prediction models into crystal structure prediction software for multi-objective optimization and (2) performance prediction and molecular dynamics simulations of all-solid-state batteries.",
+    "about.current": "I am currently working on (1) embedding prediction models into crystal structure prediction software for <mark class='research-highlight'>multi-objective optimization</mark> and (2) performance prediction and molecular dynamics simulations of <mark class='research-highlight'>all-solid-state batteries</mark>.",
     "about.phd": "I am looking for a PhD position starting Fall 2027.",
     "about.resume": "My Resume",
     "about.lang.title": "Language",
@@ -63,16 +63,16 @@ const translations = {
     "work.gif.filter": "Filter & Export",
     "work.gif.hypervolume": "Hypervolume",
     "work.project1.title": "Hydride Tc Predictor",
-    "work.project1.desc": "Constructed interpretable SISSO descriptor models to predict the critical temperature of hydrogen-based superconductors at moderate pressures. Published in Materials Today Physics (2026, 63, 102073). The prediction formulas have been packaged into a Python tool and an online calculator.",
+    "work.project1.desc": "Constructed <mark class='research-highlight'>interpretable SISSO descriptor models</mark> to predict the critical temperature of hydrogen-based superconductors at moderate pressures. Published in Materials Today Physics (2026, 63, 102073). The prediction formulas have been packaged into a Python tool and an online calculator.",
     "work.project1.link": "Online Calculator",
     "work.project1.paper": "Paper",
     "work.project2.title": "USPEX Analyzer",
-    "work.project2.desc": "A browser-based interactive analysis platform for USPEX crystal structure prediction results. Features include convex hull visualization, Pareto front analysis, scatter plot explorer with GIF export, genealogy tracking, and flexible data filtering and export.",
+    "work.project2.desc": "<mark class='research-highlight'>Analyze USPEX crystal structure search results in your browser.</mark> Use convex hulls and Pareto fronts to assess relative stability and compare multiple objectives, then filter and export candidate structures.",
     "work.project2.featured": "Listed on the USPEX official website as a recommended community tool.",
     "work.project2.featured.link": "USPEX Tools \u2192",
-    "work.project2.link": "Visit Site",
+    "work.project2.link": "Open Analyzer",
     "work.project3.title": "SISSO-Analyzer",
-    "work.project3.desc": "A browser-based tool for validating, comparing, and visualizing SISSO candidate models, including holdout metrics, Pareto fronts, and per-model diagnostics.",
+    "work.project3.desc": "A browser-based tool for <mark class='research-highlight'>validating, comparing, and visualizing SISSO candidate models</mark>, including holdout metrics, Pareto fronts, and per-model diagnostics.",
     "work.project3.companion": "AI-assisted companion: SISSO-Sage reviews predictive evidence, feature metadata, and extraction code to identify several scientifically defensible candidate formulas.",
     "work.project3.sage": "SISSO-Sage \u2192",
     "work.project3.link": "Live Demo",
@@ -88,14 +88,14 @@ const translations = {
     "nav.work": "项目",
     "nav.contact": "联系",
     "header.name": "陈嘉维",
-    "header.tagline": "晶体结构预测<br>机器学习<br>第一性原理计算",
+    "header.tagline": "<span class='hero-mask'><span><mark class='research-highlight hero-highlight'>晶体结构预测</mark></span></span><span class='hero-mask'><span><mark class='research-highlight hero-highlight'>机器学习</mark></span></span><span class='hero-mask'><span><mark class='research-highlight hero-highlight'>第一性原理计算</mark></span></span>",
     "header.cta": "联系我",
 
     /* About */
     "about.title": "关于我",
     "about.identity": "广东工业大学材料物理与化学专业硕士研究生在读，预计2027年6月毕业。",
     "about.research": "研究方向为晶体结构预测、机器学习辅助材料设计与第一性原理计算。对材料基因、机器学习势函数和分子动力学方向特别感兴趣。",
-    "about.current": "目前在研项目：(1) 将预测模型嵌入晶体结构预测软件，实现多目标优化；(2) 全固态电池的性能预测与分子动力学模拟。",
+    "about.current": "目前在研项目：(1) 将预测模型嵌入晶体结构预测软件，实现<mark class='research-highlight'>多目标优化</mark>；(2) <mark class='research-highlight'>全固态电池</mark>的性能预测与分子动力学模拟。",
     "about.phd": "计划2027年秋季开始攻读博士，正在寻找合适的课题组。",
     "about.resume": "我的简历",
     "about.lang.title": "语言能力",
@@ -146,16 +146,16 @@ const translations = {
     "work.gif.filter": "筛选与导出",
     "work.gif.hypervolume": "Hypervolume",
     "work.project1.title": "氢基超导体可解释描述符预测模型",
-    "work.project1.desc": "构建可解释的 SISSO 描述符模型，实现中等压力下氢基超导体临界温度的预测。成果发表于 Materials Today Physics (2026, 63, 102073)。预测公式已封装为 Python 工具和在线计算器。",
+    "work.project1.desc": "构建<mark class='research-highlight'>可解释的 SISSO 描述符模型</mark>，实现中等压力下氢基超导体临界温度的预测。成果发表于 Materials Today Physics (2026, 63, 102073)。预测公式已封装为 Python 工具和在线计算器。",
     "work.project1.link": "在线计算器",
     "work.project1.paper": "论文",
     "work.project2.title": "USPEX Analyzer",
-    "work.project2.desc": "基于浏览器的 USPEX 晶体结构预测后处理平台。支持凸包可视化、Pareto 前沿分析、散点图探索与 GIF 导出、族谱追踪，以及灵活的数据筛选与导出功能。",
+    "work.project2.desc": "<mark class='research-highlight'>在浏览器中分析 USPEX 晶体结构搜索结果。</mark>用凸包与 Pareto 前沿判断候选结构的相对稳定性、比较多个目标，再筛选并导出候选结构。",
     "work.project2.featured": "该工具已被 USPEX 官方网站收录为社区推荐工具。",
     "work.project2.featured.link": "USPEX 官方工具 \u2192",
-    "work.project2.link": "访问网站",
+    "work.project2.link": "打开分析器",
     "work.project3.title": "SISSO-Analyzer",
-    "work.project3.desc": "基于浏览器的 SISSO 候选模型验证、比较与可视化工具，支持留出集指标、Pareto 前沿和单模型诊断。",
+    "work.project3.desc": "基于浏览器的 <mark class='research-highlight'>SISSO 候选模型验证、比较与可视化</mark>工具，支持留出集指标、Pareto 前沿和单模型诊断。",
     "work.project3.companion": "AI 配套工具：SISSO-Sage 可结合预测证据、特征元数据和提取源码，审查并给出多条具有科学依据的候选公式。",
     "work.project3.sage": "SISSO-Sage \u2192",
     "work.project3.link": "在线演示",
@@ -177,6 +177,7 @@ function setLanguage(lang) {
   // Update switch state
   const langSwitch = document.getElementById('lang-toggle');
   langSwitch.classList.toggle('zh', lang === 'zh');
+  langSwitch.setAttribute('aria-pressed', String(lang === 'zh'));
   langSwitch.querySelectorAll('.lang-switch__option').forEach(opt => {
     opt.classList.toggle('active', opt.dataset.lang === lang);
   });
@@ -187,7 +188,20 @@ function setLanguage(lang) {
       if (el.hasAttribute('data-i18n-html')) {
         el.innerHTML = translations[lang][key];
       } else {
-        el.textContent = translations[lang][key];
+        const label = translations[lang][key];
+        el.textContent = label;
+        if (el.classList.contains('project-link-roll')) {
+          el.parentElement.setAttribute('aria-label', label);
+          const letters = Array.from(label, (letter, index) => {
+            const character = document.createElement('span');
+            character.setAttribute('aria-hidden', 'true');
+            character.style.setProperty('--letter', index);
+            character.dataset.copy = letter;
+            character.textContent = letter;
+            return character;
+          });
+          el.replaceChildren(...letters);
+        }
       }
     }
     // Switch href based on language
@@ -207,8 +221,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const langSwitch = document.getElementById('lang-toggle');
 
   setLanguage(currentLang);
+  document.querySelector('.header__text').classList.add('hero-ready');
 
   langSwitch.addEventListener('click', () => {
+    document.querySelector('.header__text').classList.remove('hero-ready');
     setLanguage(currentLang === 'en' ? 'zh' : 'en');
   });
 });
