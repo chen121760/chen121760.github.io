@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="index.css?v=6" />
+  <link rel="stylesheet" href="index.css?v=9" />
   <link rel="stylesheet" href="project-media.css?v=20261113g" />
   <script>
     (function() {
@@ -145,31 +145,42 @@
         </div>
 
         <!-- Education Timeline -->
-        <div class="education reveal">
+        <div class="education">
           <h3 data-i18n="education.title">Education</h3>
-          <div class="education__list">
-
-            <div class="education__item">
-              <div class="education__dot"></div>
-              <div class="education__card">
-                <div class="education__range" data-i18n="education.ms.range">2024.09 – 2027.06 (Expected)</div>
-                <div class="education__degree" data-i18n="education.ms.degree">M.S. in Materials Physics and Chemistry</div>
-                <div class="education__school" data-i18n="education.ms.school">Guangdong University of Technology, School of Physics and Optoelectronic Engineering</div>
-                <div class="education__gpa" data-i18n="education.ms.gpa">GPA: 4.01 / 5.0</div>
-                <div class="education__advisor" data-i18n="education.ms.advisor" data-i18n-html>Advisor: <a href="https://yzw.gdut.edu.cn/info/1087/2846.htm" target="_blank">Prof. Huafeng Dong</a></div>
+          <div class="profile-stack">
+            <div class="profile-stack__front">
+              <div class="education__list">
+                <div class="education__item">
+                  <div class="education__dot"></div>
+                  <div class="education__card">
+                    <div class="education__range" data-i18n="education.ms.range">2024.09 – 2027.06 (Expected)</div>
+                    <div class="education__degree" data-i18n="education.ms.degree">M.S. in Materials Physics and Chemistry</div>
+                    <div class="education__school" data-i18n="education.ms.school">Guangdong University of Technology, School of Physics and Optoelectronic Engineering</div>
+                    <div class="education__gpa" data-i18n="education.ms.gpa">GPA: 4.01 / 5.0</div>
+                    <div class="education__advisor" data-i18n="education.ms.advisor" data-i18n-html>Advisor: <a href="https://yzw.gdut.edu.cn/info/1087/2846.htm" target="_blank">Prof. Huafeng Dong</a></div>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div class="education__item">
-              <div class="education__dot"></div>
-              <div class="education__card">
-                <div class="education__range" data-i18n="education.bs.range">2020.09 – 2024.06</div>
-                <div class="education__degree" data-i18n="education.bs.degree">B.S. in Applied Chemistry</div>
-                <div class="education__school" data-i18n="education.bs.school">Guangdong University of Technology, School of Chemical Engineering and Light Industry</div>
-                <div class="education__gpa" data-i18n="education.bs.gpa">GPA: 3.73 / 5.0</div>
+            <details class="profile-stack__details">
+              <summary class="profile-stack__summary">
+                <span class="profile-stack__label" data-i18n="education.more">Undergraduate education</span>
+                <span class="profile-stack__chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="profile-stack__content">
+                <div class="education__list">
+                  <div class="education__item">
+                    <div class="education__dot"></div>
+                    <div class="education__card">
+                      <div class="education__range" data-i18n="education.bs.range">2020.09 – 2024.06</div>
+                      <div class="education__degree" data-i18n="education.bs.degree">B.S. in Applied Chemistry</div>
+                      <div class="education__school" data-i18n="education.bs.school">Guangdong University of Technology, School of Chemical Engineering and Light Industry</div>
+                      <div class="education__gpa" data-i18n="education.bs.gpa">GPA: 3.73 / 5.0</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-
+            </details>
           </div>
         </div>
       </div>
@@ -182,96 +193,107 @@
       <div class="row">
         <h2 data-i18n="publications.title">Publications</h2>
 
-        <div class="pubs__list">
-
-          <!-- Paper 1 -->
-          <div class="pubs__item reveal">
-            <div class="pubs__index">1</div>
-            <div class="pubs__body">
-              <p class="pubs__title">
-                <a href="https://www.sciencedirect.com/science/article/pii/S2542529326000647" target="_blank" data-i18n="pubs.paper1.title">
-                  Interpretable descriptors enable prediction of hydrogen-based superconductors at moderate pressures
-                </a>
-              </p>
-              <p class="pubs__authors" data-i18n="pubs.paper1.authors" data-i18n-html>
-                <strong>Chen J</strong>, Peng J, Liang Y, et al.
-              </p>
-              <p class="pubs__journal">
-                <em>Materials Today Physics</em>, 2026, 63: 102073
-              </p>
-              <div class="pubs__links">
-                <a href="https://www.sciencedirect.com/science/article/pii/S2542529326000647" target="_blank" class="pubs__doi">DOI</a>
+        <div class="profile-stack">
+          <div class="profile-stack__front">
+            <div class="pubs__list" lang="en">
+              <!-- Paper 1 -->
+              <div class="pubs__item">
+                <div class="pubs__index">1</div>
+                <div class="pubs__body">
+                  <p class="pubs__title">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S2542529326000647" target="_blank" data-i18n="pubs.paper1.title">
+                      Interpretable descriptors enable prediction of hydrogen-based superconductors at moderate pressures
+                    </a>
+                  </p>
+                  <p class="pubs__authors" data-i18n="pubs.paper1.authors" data-i18n-html>
+                    <strong>Chen J</strong>, Peng J, Liang Y, et al.
+                  </p>
+                  <p class="pubs__journal">
+                    <em>Materials Today Physics</em>, 2026, 63: 102073
+                  </p>
+                  <div class="pubs__links">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S2542529326000647" target="_blank" class="pubs__doi">DOI</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <details class="profile-stack__details">
+            <summary class="profile-stack__summary">
+              <span class="profile-stack__label" data-i18n="publications.more">Other publications</span>
+              <span class="profile-stack__chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="profile-stack__content">
+              <div class="pubs__list" lang="en">
+                <!-- Paper 2 -->
+                <div class="pubs__item">
+                  <div class="pubs__index">2</div>
+                  <div class="pubs__body">
+                    <p class="pubs__title">
+                      <a href="https://pubs.acs.org/doi/10.1021/acs.inorgchem.5c06103" target="_blank" data-i18n="pubs.paper2.title">
+                        High-Throughput Screening of Bulk Boride Superconductors with Honeycomb-Ruby Frameworks
+                      </a>
+                    </p>
+                    <p class="pubs__authors" data-i18n="pubs.paper2.authors" data-i18n-html>
+                      Liang Y*, <strong>Chen J*</strong>, Huang Y, et al.
+                    </p>
+                    <p class="pubs__journal">
+                      <em>Inorganic Chemistry</em>, 2026, 65(10): 5731–5739
+                    </p>
+                    <div class="pubs__links">
+                      <a href="https://pubs.acs.org/doi/10.1021/acs.inorgchem.5c06103" target="_blank" class="pubs__doi">DOI</a>
+                    </div>
+                  </div>
+                </div>
 
-          <!-- Paper 2 -->
-          <div class="pubs__item reveal">
-            <div class="pubs__index">2</div>
-            <div class="pubs__body">
-              <p class="pubs__title">
-                <a href="https://pubs.acs.org/doi/10.1021/acs.inorgchem.5c06103" target="_blank" data-i18n="pubs.paper2.title">
-                  High-Throughput Screening of Bulk Boride Superconductors with Honeycomb-Ruby Frameworks
-                </a>
-              </p>
-              <p class="pubs__authors" data-i18n="pubs.paper2.authors" data-i18n-html>
-                Liang Y*, <strong>Chen J*</strong>, Huang Y, et al.
-              </p>
-              <p class="pubs__journal">
-                <em>Inorganic Chemistry</em>, 2026, 65(10): 5731–5739
-              </p>
-              <div class="pubs__links">
-                <a href="https://pubs.acs.org/doi/10.1021/acs.inorgchem.5c06103" target="_blank" class="pubs__doi">DOI</a>
+                <!-- Paper 3 -->
+                <div class="pubs__item">
+                  <div class="pubs__index">3</div>
+                  <div class="pubs__body">
+                    <p class="pubs__title">
+                      <a href="https://pubs.rsc.org/en/content/articlelanding/2023/cp/d3cp01830j" target="_blank" data-i18n="pubs.paper3.title">
+                        Activating HfX₂ (X = S, Se and Te) for the hydrogen evolution reaction by introducing defects: a first-principles study
+                      </a>
+                    </p>
+                    <p class="pubs__authors" data-i18n="pubs.paper3.authors" data-i18n-html>
+                      <strong>Chen J*</strong>, Zhang R*, Luo J, et al.
+                    </p>
+                    <p class="pubs__journal">
+                      <em>Physical Chemistry Chemical Physics</em>, 2023, 25(38): 26043–26048
+                    </p>
+                    <div class="pubs__links">
+                      <a href="https://pubs.rsc.org/en/content/articlelanding/2023/cp/d3cp01830j" target="_blank" class="pubs__doi">DOI</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Paper 4 -->
+                <div class="pubs__item">
+                  <div class="pubs__index">4</div>
+                  <div class="pubs__body">
+                    <p class="pubs__title">
+                      <a href="https://www.sciencedirect.com/science/article/pii/S0921452626009403" target="_blank" data-i18n="pubs.paper4.title">
+                        Crystal structure prediction of stable quaternary hydrides in the Cs–Li–Rh–H system
+                      </a>
+                    </p>
+                    <p class="pubs__authors" data-i18n="pubs.paper4.authors" data-i18n-html>
+                      Chen R, Zhang S, <strong>Chen J</strong>, Liang Y, Peng J, Dong H
+                    </p>
+                    <p class="pubs__journal">
+                      <em>Physica B: Condensed Matter</em>, 2026, 741: 419177
+                    </p>
+                    <div class="pubs__links">
+                      <a href="https://www.sciencedirect.com/science/article/pii/S0921452626009403" target="_blank" class="pubs__doi">DOI</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-
-          <!-- Paper 3 -->
-          <div class="pubs__item reveal">
-            <div class="pubs__index">3</div>
-            <div class="pubs__body">
-              <p class="pubs__title">
-                <a href="https://pubs.rsc.org/en/content/articlelanding/2023/cp/d3cp01830j" target="_blank" data-i18n="pubs.paper3.title">
-                  Activating HfX₂ (X = S, Se and Te) for the hydrogen evolution reaction by introducing defects: a first-principles study
-                </a>
-              </p>
-              <p class="pubs__authors" data-i18n="pubs.paper3.authors" data-i18n-html>
-                <strong>Chen J*</strong>, Zhang R*, Luo J, et al.
-              </p>
-              <p class="pubs__journal">
-                <em>Physical Chemistry Chemical Physics</em>, 2023, 25(38): 26043–26048
-              </p>
-              <div class="pubs__links">
-                <a href="https://pubs.rsc.org/en/content/articlelanding/2023/cp/d3cp01830j" target="_blank" class="pubs__doi">DOI</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Paper 4 -->
-          <div class="pubs__item reveal">
-            <div class="pubs__index">4</div>
-            <div class="pubs__body">
-              <p class="pubs__title">
-                <a href="https://www.sciencedirect.com/science/article/pii/S0921452626009403" target="_blank" data-i18n="pubs.paper4.title">
-                  Crystal structure prediction of stable quaternary hydrides in the Cs–Li–Rh–H system
-                </a>
-              </p>
-              <p class="pubs__authors" data-i18n="pubs.paper4.authors" data-i18n-html>
-                Chen R, Zhang S, <strong>Chen J</strong>, Liang Y, Peng J, Dong H
-              </p>
-              <p class="pubs__journal">
-                <em>Physica B: Condensed Matter</em>, 2026, 741: 419177
-              </p>
-              <div class="pubs__links">
-                <a href="https://www.sciencedirect.com/science/article/pii/S0921452626009403" target="_blank" class="pubs__doi">DOI</a>
-              </div>
-            </div>
-          </div>
-
+          </details>
         </div>
 
         <!-- ORCID -->
-        <div class="pubs__orcid reveal">
+        <div class="pubs__orcid">
           <a href="https://orcid.org/0009-0001-8796-662X" target="_blank" class="orcid__link" data-i18n="publications.orcid">
             ORCID: 0009-0001-8796-662X
           </a>
@@ -448,14 +470,28 @@
     <section class="honors" id="honors">
       <div class="row">
         <h2 data-i18n="honors.title">Honors &amp; Awards</h2>
-        <ul class="honors__list reveal">
-          <li data-i18n="honors.1">Exempted from Graduate Entrance Examination</li>
-          <li data-i18n="honors.2">Graduate Elite Talent Program, Guangdong University of Technology</li>
-          <li data-i18n="honors.3">First-Class Graduate Scholarship (2024, 2024–2025), Guangdong University of Technology</li>
-          <li data-i18n="honors.4">Third Prize, South China Undergraduate Physics Experiment Competition (2022)</li>
-          <li data-i18n="honors.5">Second Prize, Guangdong Division of the National Mathematical Contest in Modeling (2022)</li>
-          <li data-i18n="honors.6">Outstanding Student Scholarship (2020–2023), Guangdong University of Technology</li>
-        </ul>
+        <div class="profile-stack">
+          <div class="profile-stack__front">
+            <ul class="honors__list">
+              <li data-i18n="honors.1">Exempted from Graduate Entrance Examination</li>
+            </ul>
+          </div>
+          <details class="profile-stack__details">
+            <summary class="profile-stack__summary">
+              <span class="profile-stack__label" data-i18n="honors.more">Other honors</span>
+              <span class="profile-stack__chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="profile-stack__content">
+              <ul class="honors__list">
+                <li data-i18n="honors.2">Graduate Elite Talent Program, Guangdong University of Technology</li>
+                <li data-i18n="honors.3">First-Class Graduate Scholarship (2024, 2024–2025), Guangdong University of Technology</li>
+                <li data-i18n="honors.4">Third Prize, South China Undergraduate Physics Experiment Competition (2022)</li>
+                <li data-i18n="honors.5">Second Prize, Guangdong Division of the National Mathematical Contest in Modeling (2022)</li>
+                <li data-i18n="honors.6">Outstanding Student Scholarship (2020–2023), Guangdong University of Technology</li>
+              </ul>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -523,8 +559,8 @@
   <a href="#top" class="back-to-top" title="Back to Top">
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
   </a>
-  <script src="./i18n.js?v=14" defer></script>
-  <script src="./index.js?v=6" defer></script>
+  <script src="./i18n.js?v=16" defer></script>
+  <script src="./index.js?v=8" defer></script>
   <script src="./project-media.js?v=20261113e" defer></script>
 </body>
 

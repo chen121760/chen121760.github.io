@@ -43,6 +43,85 @@ const revealObserver = window.IntersectionObserver && new IntersectionObserver((
 
 revealElements.forEach(el => revealObserver ? revealObserver.observe(el) : el.classList.add('revealed'));
 
+const openingEase = 'cubic-bezier(.215,.61,.355,1)';
+const closingEase = 'cubic-bezier(.645,.045,.355,1)';
+
+document.querySelectorAll('.profile-stack__front').forEach(front => {
+  const details = front.nextElementSibling;
+  const summary = details.querySelector('summary');
+  const content = details.querySelector('.profile-stack__content');
+  const cards = content.firstElementChild;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let heightAnimation;
+  let cardAnimation;
+
+  function toggleStack() {
+    const opening = !details.open || details.hasAttribute('data-closing');
+    const currentHeight = details.open ? content.getBoundingClientRect().height : 0;
+    const currentOffset = cardAnimation ? getComputedStyle(cards).translate : details.open ? 'none' : '0 -24px';
+    heightAnimation?.cancel();
+    cardAnimation?.cancel();
+    heightAnimation = cardAnimation = undefined;
+
+    if (!opening && content.contains(document.activeElement)) {
+      summary.focus({ preventScroll: true });
+    }
+    if (reducedMotion.matches || !content.animate) {
+      details.open = opening;
+      delete details.dataset.sliding;
+      delete details.dataset.closing;
+      content.inert = false;
+      return;
+    }
+
+    details.open = true;
+    details.toggleAttribute('data-closing', !opening);
+    details.dataset.sliding = '';
+    content.inert = !opening;
+    const fullHeight = content.getBoundingClientRect().height;
+    const targetHeight = opening ? fullHeight : 0;
+    const distance = Math.abs(targetHeight - currentHeight) / Math.max(fullHeight, 1);
+    const timing = {
+      duration: Math.max(130, (opening ? 460 : 360) * Math.min(1, distance)),
+      easing: opening ? openingEase : closingEase,
+      fill: 'both'
+    };
+
+    const animation = content.animate(
+      [{ height: `${currentHeight}px` }, { height: `${targetHeight}px` }],
+      timing
+    );
+    heightAnimation = animation;
+    cardAnimation = cards.animate(
+      [{ translate: currentOffset }, { translate: opening ? 'none' : '0 -24px' }],
+      timing
+    );
+    animation.onfinish = () => {
+      if (heightAnimation !== animation) return;
+      details.open = opening;
+      delete details.dataset.sliding;
+      delete details.dataset.closing;
+      content.inert = false;
+      heightAnimation.cancel();
+      cardAnimation.cancel();
+      heightAnimation = cardAnimation = undefined;
+    };
+  }
+
+  summary.addEventListener('click', event => {
+    event.preventDefault();
+    toggleStack();
+  });
+
+  front.classList.add('profile-stack__front--interactive');
+  front.addEventListener('click', event => {
+    if (event.target.closest('a')) return;
+    const selection = window.getSelection();
+    if (selection && !selection.isCollapsed && front.contains(selection.anchorNode)) return;
+    toggleStack();
+  });
+});
+
 // GIF lightbox with prev/next navigation
 const lightbox = document.getElementById('gif-lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
@@ -89,7 +168,7 @@ function animateLightbox(closing) {
   const full = { transform: 'none' };
   const timing = {
     duration: closing ? 350 : 450,
-    easing: closing ? 'cubic-bezier(.645,.045,.355,1)' : 'cubic-bezier(.215,.61,.355,1)',
+    easing: closing ? closingEase : openingEase,
     fill: 'both'
   };
   lightbox.animate([{ opacity: 0 }, { opacity: 1 }], {

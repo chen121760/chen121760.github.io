@@ -625,6 +625,184 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
+/* ----- Profile disclosure stacks ----- */
+/* --------------------------------------- */
+
+.profile-stack {
+    --stack-ease: cubic-bezier(0.65, 0, 0.35, 1);
+    --stack-duration: 320ms;
+    font-family: 'Times New Roman', SimSun, 'Songti SC', serif;
+}
+
+.profile-stack .profile-stack__front a,
+.profile-stack .profile-stack__content a {
+    font-family: inherit;
+}
+
+.profile-stack:has(> details[open]:not([data-closing])),
+.profile-stack__details[open]:not([data-closing]) {
+    --stack-duration: 350ms;
+}
+
+.profile-stack__front {
+    position: relative;
+    isolation: isolate;
+}
+
+.profile-stack__front--interactive {
+    cursor: pointer;
+}
+
+.profile-stack__front .education__card:hover,
+.profile-stack__front .honors__list li:hover,
+.profile-stack__front .pubs__item:hover {
+    transform: none;
+}
+
+.profile-stack__front .honors__list li {
+    padding-inline-end: 48px;
+}
+
+.profile-stack__front .education__advisor {
+    padding-inline-end: 2rem;
+}
+
+/* Motion Prompt #147 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/#147 */
+.profile-stack__front::before,
+.profile-stack__front::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    inset-inline-start: var(--stack-inset, 0);
+    z-index: -1;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--card-hover);
+    pointer-events: none;
+    transform-origin: bottom center;
+    transform: translateY(var(--paper-offset)) scale(var(--paper-scale));
+}
+
+.education .profile-stack {
+    --stack-inset: calc(var(--gutter-normal) + var(--gutter-small));
+}
+
+.profile-stack__front::before {
+    --paper-offset: 12px;
+    --paper-scale: 0.91;
+    z-index: -2;
+}
+
+.profile-stack__front::after {
+    --paper-offset: 6px;
+    --paper-scale: 0.955;
+}
+
+.profile-stack:has(> details[open]:not([data-closing])) > .profile-stack__front::before,
+.profile-stack:has(> details[open]:not([data-closing])) > .profile-stack__front::after {
+    transform: translateY(0) scale(var(--paper-scale));
+    opacity: 0;
+}
+
+.profile-stack__summary {
+    position: relative;
+    display: grid;
+    place-items: center;
+    inline-size: 44px;
+    block-size: 44px;
+    margin-block-start: -44px;
+    margin-inline-start: auto;
+    border-radius: 6px;
+    list-style: none;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.profile-stack__summary::-webkit-details-marker {
+    display: none;
+}
+
+.profile-stack__summary:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: -4px;
+}
+
+.profile-stack__summary:hover {
+    color: var(--text);
+}
+
+.profile-stack__label {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.profile-stack__chevron {
+    inline-size: 11px;
+    block-size: 11px;
+    border-inline-end: 2px solid currentColor;
+    border-block-end: 2px solid currentColor;
+    rotate: 45deg;
+}
+
+.profile-stack__details[open]:not([data-closing]) .profile-stack__chevron {
+    rotate: 225deg;
+}
+
+.profile-stack__content {
+    display: flow-root;
+}
+
+.profile-stack__content > * {
+    margin-block: 1.2rem 0.4rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    /* Motion Prompt #052 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/#052 */
+    @supports (animation-timing-function: linear(0, 1)) {
+        .profile-stack {
+            --stack-ease: linear(0, 0.0078125, 0.0625, 0.2109375, 0.5, 0.7890625, 0.9375, 0.9921875, 1);
+        }
+    }
+
+    .profile-stack__front::before,
+    .profile-stack__front::after {
+        transition: transform var(--stack-duration) var(--stack-ease),
+                    opacity var(--stack-duration) var(--stack-ease);
+    }
+
+    .profile-stack__chevron {
+        transition: rotate var(--stack-duration) var(--stack-ease);
+    }
+
+    .profile-stack:has(.profile-stack__summary:focus-visible) .profile-stack__front::before {
+        --paper-offset: 18px;
+    }
+
+    .profile-stack:has(.profile-stack__summary:focus-visible) .profile-stack__front::after {
+        --paper-offset: 9px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .profile-stack:has(.profile-stack__front:hover, .profile-stack__summary:hover) .profile-stack__front::before {
+            --paper-offset: 18px;
+        }
+
+        .profile-stack:has(.profile-stack__front:hover, .profile-stack__summary:hover) .profile-stack__front::after {
+            --paper-offset: 9px;
+        }
+    }
+
+}
+
+.profile-stack__details[data-sliding] > .profile-stack__content {
+    overflow: clip;
+}
+
+/* --------------------------------------- */
 /* ----- Education Timeline ----- */
 /* --------------------------------------- */
 
@@ -736,7 +914,7 @@ body:not(.user-is-tabbing) a:focus {
 .honors__list {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.2rem;
 }
 
@@ -796,12 +974,6 @@ body:not(.user-is-tabbing) a:focus {
     border-radius: 999px;
     font-size: var(--font-size-small);
     font-weight: 500;
-}
-
-@media(max-width: 500px) {
-    .honors__list {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* --------------------------------------- */

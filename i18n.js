@@ -21,6 +21,7 @@ const translations = {
 
     /* Education */
     "education.title": "Education",
+    "education.more": "Undergraduate education",
     "education.ms.range": "2024.09 – 2027.06 (Expected)",
     "education.ms.degree": "M.S. in Materials Physics and Chemistry",
     "education.ms.school": "Guangdong University of Technology, School of Physics and Optoelectronic Engineering",
@@ -33,6 +34,7 @@ const translations = {
 
     /* Honors */
     "honors.title": "Honors & Awards",
+    "honors.more": "Other honors",
     "honors.1": "Exempted from Graduate Entrance Examination",
     "honors.2": "Graduate Elite Talent Program, Guangdong University of Technology",
     "honors.3": "First-Class Graduate Scholarship (2024, 2024–2025), Guangdong University of Technology",
@@ -42,6 +44,7 @@ const translations = {
 
     /* Publications */
     "publications.title": "Publications",
+    "publications.more": "Other publications",
     "publications.orcid": "ORCID: 0009-0001-8796-662X",
     "pubs.paper1.title": "Interpretable descriptors enable prediction of hydrogen-based superconductors at moderate pressures",
     "pubs.paper1.authors": "<strong>Chen J</strong>, Peng J, Liang Y, et al.",
@@ -104,6 +107,7 @@ const translations = {
 
     /* Education */
     "education.title": "教育背景",
+    "education.more": "本科经历",
     "education.ms.range": "2024.09 – 2027.06（预计）",
     "education.ms.degree": "材料物理与化学 硕士",
     "education.ms.school": "广东工业大学 物理与光电工程学院",
@@ -116,7 +120,8 @@ const translations = {
 
     /* Honors */
     "honors.title": "荣誉与奖项",
-    "honors.1": "推荐免试攻读研究生",
+    "honors.more": "其他荣誉",
+    "honors.1": "保研（推荐免试攻读研究生）",
     "honors.2": "广东工业大学研究生拔尖创新型人才培养计划",
     "honors.3": "广东工业大学研究生一等奖学金（2024、2024–2025）",
     "honors.4": "第二十三届华南大学生物理实验设计大赛三等奖（2022）",
@@ -125,6 +130,7 @@ const translations = {
 
     /* Publications */
     "publications.title": "发表论文",
+    "publications.more": "其他论文",
     "publications.orcid": "ORCID: 0009-0001-8796-662X",
     "pubs.paper1.title": "Interpretable descriptors enable prediction of hydrogen-based superconductors at moderate pressures",
     "pubs.paper1.authors": "<strong>Chen J</strong>, Peng J, Liang Y, et al.",
